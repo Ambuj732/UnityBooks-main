@@ -1,0 +1,134 @@
+.category-container {
+	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 15vw);
+	overflow-x: wrap;
+	height: auto;
+	grid-row-gap: 2vh;
+	padding: 1vh 3vw;
+	justify-content: center;
+	align-content: center;
+	margin-bottom: 5vh;
+	max-width: none;
+}
+
+.category-card {
+	transform: scale(1.1);
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+	.category-container {
+		width: 100%;
+		padding: 0 2vw;
+		grid-template-columns: repeat(auto-fill, 24vw);
+		grid-row-gap: 1vh;
+	}
+
+	.category-card {
+		transform: scale(1);
+		width: 20vw;
+	}
+
+	.category-name {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 799px) and (min-width: 690px) {
+	.category-container {
+		width: 100%;
+		padding: 0 2vw;
+		grid-template-columns: repeat(auto-fill, 30vw);
+		grid-row-gap: 1vh;
+	}
+
+	.category-card {
+		width: 23.5vw;
+		box-shadow: 3px 3px 3.5px 3px rgba(114, 181, 248, 0.233);
+	}
+
+	.category-name {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 660px) and (min-width: 590px) {
+	.category-container {
+		width: 100%;
+		padding: 0 2vw;
+		grid-template-columns: repeat(auto-fill, 32vw);
+		grid-row-gap: 1vh;
+	}
+
+	.category-card {
+		transform: scale(1);
+		width: 25vw;
+		box-shadow: 3px 3px 3.5px 3px rgba(114, 181, 248, 0.233);
+	}
+
+	.category-name {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 590px) and (min-width: 501px) {
+	.category-container {
+		width: 100%;
+		padding: 0;
+		grid-template-columns: repeat(auto-fill, 40vw);
+		grid-row-gap: 2vh;
+	}
+
+	.category-card {
+		transform: scale(1);
+		width: 33vw;
+		box-shadow: 3px 3px 3.5px 3px rgba(114, 181, 248, 0.233);
+	}
+
+	.category-name {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 501px) and (min-width: 350px) {
+	.category-container {
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, 46.5vw);
+		grid-row-gap: 0.75vh;
+		margin-top: 0;
+		margin-bottom: 2.5vh;
+	}
+
+	.category-card {
+		transform: scale(1);
+		width: 40vw;
+		box-shadow: 3px 3px 3.5px 3px rgba(114, 181, 248, 0.233);
+		min-width: 155px;
+	}
+
+	.category-name {
+		font-size: 13.5px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.category-container {
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, 85vw);
+		grid-row-gap: 0px;
+		padding: 0 2vw;
+	}
+
+	.category-card {
+		transform: scale(1.25);
+		width: 35vw;
+		box-shadow: 3px 3px 3.5px 3px rgba(114, 181, 248, 0.233);
+	}
+
+	.category-name {
+		font-size: 15px;
+	}
+}

@@ -1,0 +1,8 @@
+node_modules
+.env
+.vscode
+admin/screens
+admin/img
+id_rsa.ppk
+id_rsa.pub
+id_rsa_private

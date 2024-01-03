@@ -1,0 +1,135 @@
+.profile__header__card {
+    background-size: cover;
+    background-position: center;
+    background-image: url('/img/profile.jpg');
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.profile__header {
+    margin: 7.5vh 0;
+    top: 15vh;
+    position: relative;
+    padding: 7.5vh;
+    width: 85%;
+    font-size: 4vh;
+    color: var(--black2);
+}
+
+.profile__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4vh;
+    color: var(--black2);
+}
+
+.profile__img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 2px solid var(--grey2);
+    position: absolute;
+    top: -50%;
+    margin-bottom: 0vh;
+}
+
+.profile__img img {
+    width: 125px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile__info {
+    margin-bottom: 0.75vh;
+    padding-top: 0;
+}
+
+.profile__headings {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4vh;
+}
+
+.profile__item {
+    margin: 2.5vh 0;
+    width: 90%;
+    padding: 0 10px;
+}
+
+.profile__label {
+    font-size: 3.5vh;
+    color: var(--color-dark-grey);
+    width: 25%;
+}
+
+.profile__value {
+    font-size: 3.5vh;
+    font-weight: 600;
+    color: var(--color-primary);
+    width: 75%;
+}
+
+.profile__footer {
+    position: absolute;
+    bottom: 7.5%;
+}
+
+#myOrdersBtn {
+    width: fit-content;
+    margin-bottom: 5vh;
+}
+
+@media screen and (max-width: 500px) {
+    .profile {
+        margin-top: 2vh;
+    }
+
+    .profile__header__card {
+        border-radius: 6px;
+        margin-bottom: 5vh;
+    }
+
+    .profile__header {
+        margin: 5vh 0;
+        top: 7.5vh;
+        padding: 5.5vh 15px;
+    }
+
+    .profile__img {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .profile__img img {
+        width: 25vw;
+    }
+
+    .profile__name {
+        font-size: 5vw;
+    }
+
+    .profile__item {
+        margin: 1vh 0;
+        width: 100%;
+    }
+
+    .profile__headings {
+        font-size: 6vw;
+    }
+
+    .profile__label {
+        font-size: 2vh;
+    }
+
+    .profile__value {
+        font-size: 2vh;
+    }
+
+    .profile__footer {
+        position: absolute;
+        bottom: 7.5%;
+    }
+
+    #myOrdersBtn {
+        transform: scale(1.5);
+    }
+}

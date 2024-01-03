@@ -1,0 +1,79 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: url(../images/png/cart1.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#popout {
+    margin: 10vh 27.5vw;
+    padding: 2.5vh 2.5vw;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgb(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    transform: scale(0.75);
+}
+
+.h-3 {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) and (min-width:501px) {
+    body {
+        background: url(../images/png/cart2.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #popout {
+        border-radius: 10px;
+        margin: 18vh 18vw;
+        padding: 2vh 2vw;
+    }
+}
+
+@media screen and (max-width:500px) {
+    body {
+        background: url(../images/png/cart3.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #popout {
+        border-radius: 7.5px;
+        margin: 18vh 18vw;
+        padding: 2vh 2vw;
+    }
+
+    .h-3 {
+        font-size: 10px;
+    }
+
+    .btn {
+        margin-top: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    .margin-top-bottom {
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+    }
+}

@@ -1,0 +1,39 @@
+.field-value,
+.field-value-2 {
+	width: 36vw;
+}
+
+.fields {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+	.card-front .wrapper {
+		width: 85%;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	#login-container {
+		height: auto;
+	}
+
+	.card-front .wrapper {
+		width: 95%
+	}
+
+	.fields {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 5vh;
+	}
+
+	.field-value,
+	.field-value-2 {
+		width: 75vw;
+		margin-top: 10px;
+	}
+}

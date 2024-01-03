@@ -1,0 +1,343 @@
+#emptyCartImg {
+	height: 50vh;
+	width: auto;
+}
+
+.carttxtarea {
+	display: flex;
+	align-items: center;
+	margin-top: 4vh;
+}
+
+.carttxt {
+	font-size: 4vh !important;
+	color: #2e2f32 !important;
+	letter-spacing: 0.3px;
+	/* flex-direction: column; */
+}
+
+#cartnum {
+	font-size: 4vh !important;
+	color: #46474a !important;
+	letter-spacing: 0.3px;
+	font-weight: 500;
+	margin-left: 4px;
+}
+
+.cartdivisions {
+	margin: 3.7037vh;
+}
+
+.cart_box {
+	background-color: white;
+	width: 100%;
+}
+
+#checkoutarea {
+	top: 20vh;
+	position: -webkit-sticky;
+	position: sticky;
+}
+
+.subtotal {
+	-webkit-justify-content: space-between !important;
+	justify-content: space-between !important;
+}
+
+#nugget {
+	display: flex;
+	padding: 16px;
+	margin: 10px 16px;
+	-webkit-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-height: 0;
+	min-width: 0;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	-webkit-align-items: center;
+	align-items: center;
+	background-color: var(--color-primary) !important;
+	border-radius: 10px;
+	position: relative;
+}
+
+#nugget span {
+	margin-left: 1vw;
+	margin-right: 1vw;
+	/* margin-top: 10px; */
+	font-size: 2.25vh !important;
+	color: #fff;
+	font-weight: 500;
+}
+
+#order_summary {
+	margin-bottom: 1vh;
+}
+
+#closeBtn {
+	cursor: pointer;
+	border: 3.5px solid var(--color-primary);
+	background-color: var(--color-primary);
+	position: absolute;
+	top: 25%;
+	left: 90%;
+}
+
+.btnlink {
+	background: none;
+	border: none;
+	padding: 0.5vh 0;
+	cursor: pointer;
+	text-decoration: underline;
+	color: var(--color-primary);
+	text-decoration: underline;
+	text-decoration-color: var(--color-primary);
+}
+
+.btnlink:hover {
+	text-decoration: none;
+	color: var(--color-sec);
+}
+
+.cart-img {
+	width: 125px;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 1.25px 2.25px 1.25px #00000023;
+}
+
+.prod_det {
+	justify-content: space-around;
+}
+
+.item-price-box {
+	margin-left: auto;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.product-name {
+	color: #000;
+}
+
+#order_summary .text {
+	font-family: 'Poppins';
+}
+
+#order_summary .hrstyle {
+	margin-bottom: 0;
+}
+
+#order_summary .margin-top {
+	margin-top: 1.75vh;
+}
+
+#tot_box {
+	margin-top: 5px;
+}
+
+.cartBtns {
+	gap: 10%;
+}
+
+.trash-icon {
+	height: 18px;
+	width: auto;
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+}
+
+/* Coupon Section */
+
+#coupons {
+	margin-left: 1.5vw;
+	margin-right: 1.5vw;
+}
+
+.coupon-items {
+	align-items: center;
+	justify-content: space-between;
+	align-self: stretch;
+	padding: 0.75vh 0.75vw;
+}
+
+.coupon-items>.flex-row {
+	margin: 0.5vh 0;
+}
+
+.coupon-heading {
+	font-family: "Poppins";
+	font-size: 24px;
+	letter-spacing: 5px;
+	color: var(--color-dark-grey);
+	font-weight: bold;
+}
+
+.coupon-offer {
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "Poppins";
+}
+
+.applyCouponBtn {
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	background: none;
+	font-family: "Montserrat";
+	font-size: 18px;
+	letter-spacing: 1.25px;
+	color: var(--color-sec);
+	font-weight: bold;
+}
+
+.applyCouponBtnDisabled {
+	cursor: not-allowed;
+	opacity: 0.35;
+}
+
+.coupon-desc {
+	font-size: 12px;
+	padding-right: 12px;
+	color: var(--color-dark-grey);
+}
+
+.green-box,
+.orange-box {
+	padding: 3.5px 7px;
+}
+
+.coupon-special {
+	font-family: "Poppins";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#couponBox img {
+	margin-right: 10px;
+}
+
+#couponBox .bbox-text {
+	font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+	.cart-main {
+		flex-direction: column-reverse;
+	}
+
+	.onethird,
+	.twothird {
+		width: 100%;
+		margin: 0 0.6vw;
+	}
+
+	#checkoutarea {
+		margin-top: 2vh;
+	}
+
+	#order_summary {
+		margin: 0.5vh 4.5vw;
+	}
+
+	#order_summary .margin-top {
+		margin-top: 2.5vh;
+	}
+
+	#order_summary .text {
+		font-size: 4.5vw;
+	}
+
+	.checkout_btn {
+		width: 95%;
+		padding: 1vh 2vw;
+		margin: 2vw;
+		font-size: 5.75vw;
+	}
+
+	.cartdivisions {
+		margin: 2vh 2vw;
+	}
+
+	#dDateText .h-1 {
+		font-size: 4vw;
+	}
+
+	.cart-img {
+		width: 75px;
+		height: auto;
+	}
+
+	.product-name {
+		font-size: 3.5vw;
+		color: #000;
+	}
+
+	.item-price-box .h-1 {
+		font-size: 4vw;
+	}
+
+	.cartBtns {
+		/* flex-direction: column-reverse; */
+		gap: 2px;
+		/* align-items: flex-start; */
+		/* justify-content: center; */
+		margin: 5px;
+	}
+
+	.btnlink {
+		margin: 0;
+		font-size: 3.5vw;
+	}
+
+	.trash-icon {
+		height: 3.5vw;
+		width: auto;
+	}
+
+	.qtybox {
+		transform: scale(0.75);
+	}
+
+	.coupon-items {
+		padding-left: 3vw;
+		padding-right: 3vw;
+	}
+
+	.coupon-items>.flex-row {
+		margin: 0.25vh 0;
+	}
+
+	.coupon-heading {
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+
+	.coupon-offer {
+		font-size: 12px;
+	}
+
+	.applyCouponBtn {
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+
+	.coupon-desc {
+		font-size: 9px;
+		padding-right: 8px;
+	}
+
+	.coupon-special {
+		font-size: 9px;
+	}
+
+	#couponBox img {
+		margin-right: 8px;
+	}
+
+	#couponBox .bbox-text {
+		font-size: 16px;
+	}
+
+}

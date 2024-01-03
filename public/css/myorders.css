@@ -1,0 +1,39 @@
+.padding {
+	padding: 2.5%;
+}
+
+.order-details {
+	align-items: center;
+	justify-content: space-between;
+	padding: 1vh 4vw;
+}
+
+.order-details {
+	margin: 2vh 0;
+	color: #555;
+}
+
+.order-details p {
+	margin: 5px 0;
+}
+
+@media screen and (min-width: 500px) {
+	#myOrders>.h-1 {
+		font-size: 3.5vh;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	.padding {
+		padding: 4%;
+	}
+
+	.brad .h-1 {
+		font-size: 3.5vw;
+	}
+
+	.order-details {
+		font-size: 2.5vw;
+	}
+}

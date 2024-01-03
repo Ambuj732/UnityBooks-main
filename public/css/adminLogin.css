@@ -1,0 +1,79 @@
+.screen {
+	width: 100%;
+	min-height: 100svh;
+	margin: 0;
+}
+
+.login-container-main {
+	padding-bottom: 6px;
+	gap: 24px;
+	width: 32.5dvw;
+	max-width: 750px;
+	min-width: 325px;
+	margin: auto;
+}
+
+.login-container {
+	gap: 24px;
+	align-self: stretch;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.login-box {
+	padding: 24px 40px;
+	gap: 0px;
+	align-self: stretch;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.login-form-container {
+	gap: 0px;
+	align-self: stretch;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.login-header {
+	padding: 0px;
+	gap: 0px;
+	align-self: stretch;
+	flex-shrink: 0;
+}
+
+.logo {
+	padding: 6px;
+	overflow: hidden;
+	height: auto;
+}
+
+.logo-img {
+	height: 72px;
+	width: auto;
+}
+
+.login-heading-box {
+	padding: 8px 24px;
+	justify-content: center;
+	align-self: stretch;
+}
+
+.forgot-password {
+	text-align: right;
+}
+
+.btn {
+	align-self: stretch;
+}
+
+.seller-account {
+	align-self: stretch;
+	flex-shrink: 0;
+}
+
+@media screen and (max-width: 500px) and (min-width: 350px) {
+	.login-box {
+		padding: 16px 24px;
+	}
+}

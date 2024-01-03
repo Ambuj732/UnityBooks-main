@@ -1,0 +1,85 @@
+.products-container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-start;
+	align-self: stretch;
+}
+
+.product-headers,
+.product-rows {
+	position: relative;
+	overflow: hidden;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0;
+	height: auto;
+	font: 500 16px/19px 'Inter', sans-serif;
+	width: 100%;
+	align-self: stretch;
+}
+
+.product-headers {
+	border-bottom: 2px solid var(--grey-very-light);
+	font: 500 20px/24px "Montserrat", sans-serif;
+	margin-bottom: 12px;
+}
+
+.product-header,
+.product-row {
+	padding: 8px 18px;
+	width: auto;
+	position: relative;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-self: stretch;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.product-header {
+	padding: 18px;
+}
+
+.price,
+.mrp {
+	flex: 0 0 10%;
+}
+
+.seller,
+.view {
+	flex: 0 0 15%;
+}
+
+.name {
+	flex-grow: 1;
+	flex-basis: 0;
+	padding-left: 36px;
+	padding-right: 8px;
+	gap: 12px;
+}
+
+.product-rows .checkbox {
+	margin: 18px;
+}
+
+.product-rows>.name {
+	display: flex;
+	padding-left: 5svw;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 36px;
+}
+
+.product-rows .view {
+	padding-right: 0;
+}
+
+.product-image {
+	height: 12svh;
+	border-radius: 4px;
+	width: auto;
+}

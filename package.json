@@ -1,0 +1,36 @@
+{
+  "name": "unitybooks",
+  "version": "1.0.0",
+  "description": "Unity Books Website Work",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnirudhBagalkotker/UnityBooks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnirudhBagalkotker/UnityBooks/issues"
+  },
+  "homepage": "https://github.com/AnirudhBagalkotker/UnityBooks#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express.js": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.22",
+    "pug": "^3.0.2",
+    "razorpay": "^2.8.6",
+    "util": "^0.12.5",
+    "util.promisify": "^1.1.1"
+  }
+}

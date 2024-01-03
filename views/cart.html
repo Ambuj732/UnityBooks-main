@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<title>Cart | unitybooks.in</title>
+	<meta name="description"
+		content="Cart for Unity Books, all items added to cart will be displayed. Please Login to see the items you added to the cart previously" />
+
+	<link rel="icon" href="img/logo.webp" type="image/x-icon" />
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" media="screen and (max-width: 1000px) and (min-width: 501px)" href="/css/tablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+	<link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body>
+
+	<nav class="navbar flex-colunm"></nav>
+
+	<div id="top_btn" onclick="topFunction()" class="unselectable">
+		<button id="myBtn" class="unselectable" title="Go to top" type="button">
+			<svg id="topbtn" viewBox="0 0 330 330">
+				<defs>
+					<linearGradient gradientUnits="userSpaceOnUse" x1="165" y1="75" x2="165" y2="255" id="gradient-0">
+						<stop offset="0" style="stop-color: rgba(0, 46, 111, 1)"></stop>
+						<stop offset="1" style="stop-color: rgba(0, 4, 9, 1)"></stop>
+					</linearGradient>
+				</defs>
+				<path id="XMLID_224_"
+					d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z">
+				</path>
+			</svg>
+		</button>
+	</div>
+
+	<section id="loader" class="flex item-center margin-top-bottom">
+		<div class="loadingio-spinner-rolling-suds4nfwr6">
+			<div class="ldio-mmfzwmfmbii">
+				<div></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="cartpage">
+		<div class="margin-left-right">
+			<div class="margin-bottom flex-colunm">
+				<div class="carttxtarea">
+					<h1 class="h-1 b">Cart (<span class="cartno" id="noOfItems"></span> Items)</h1>
+				</div>
+				<div class="flex cart-main">
+					<div class="twothird flex-colunm">
+						<div class="margin-bottom">
+							<div></div>
+						</div>
+						<div class="brad shadow cart_box margin-bottom">
+							<div class="flex-colunm cartdivisions">
+								<div id="dDateText">
+									<h1 class="h-1 b" id="dDate"></h1>
+								</div>
+							</div>
+							<div class="hrstyle"></div>
+							<div class="flex-colunm cartdivisions" id="cartContainer"></div>
+						</div>
+					</div>
+
+					<div class="onethird flex-colunm">
+						<div class="sticky" id="checkoutarea">
+							<div class="brad shadow cart_box flex-colunm">
+								<div id="nugget" class="hidden flex-row">
+									<img alt="Reduced Price" src="img/discount.svg" height="30" width="30" class="">
+									<span class="text">
+										Prices of Items in your cart have reduced <br> Checkout now for extra savings!
+									</span>
+									<button id="closeBtn" title="CloseButton" type="button">
+										<img src="img/close.svg" width="30" height="30" alt="close">
+									</button>
+								</div>
+
+								<div class="flex-colunm margin-bottom margin-left-right" id="order_summary">
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Items :</span>
+										<span class="text grey-box b">
+											<strike> &#8377; <span id="p_tot"></span></strike>
+										</span>
+									</div>
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Savings :</span>
+										<span class="text green-box b">-&#8377;
+											<span id="p_save"></span>
+										</span>
+									</div>
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Subtotal :</span>
+										<span class="text grey-box b"> &#8377;
+											<span id="p_subtot"></span>
+										</span>
+									</div>
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Delivery :</span>
+										<span class="text grey-box b"> &#8377;
+											<span id="p_del"></span>
+										</span>
+									</div>
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Extras :</span>
+										<span class="text grey-box b"> &#8377;
+											<span id="p_extra"></span>
+										</span>
+									</div>
+									<div class="flex-row item-center margin-top subtotal">
+										<span class="flex-row text">Coupon :</span>
+										<span class="text green-box b">-&#8377;
+											<span id="p_coupon"></span>
+										</span>
+									</div>
+									<div class="hrstyle"></div>
+									<div class="flex-row item-center subtotal" id="tot_box">
+										<span class="flex-row text">Total :</span>
+										<span class="text grey-box b"> &#8377;
+											<span id="p_grandtot"></span>
+										</span>
+									</div>
+								</div>
+
+								<div class="hrstyle"></div>
+
+								<div class="check_btn">
+									<button class="checkout_btn h-secondary b flex item-center" type="button"
+										id="checkout_btn">
+										Continue to Checkout
+									</button>
+								</div>
+							</div>
+
+							<div class="margin-bottom">
+								<div></div>
+							</div>
+
+							<div class="brad shadow cart_box flex-colunm hidden" id="giftBox">
+								<div class="flex-row">
+									<div class=" margin-top margin-left-right">
+										<img src="img/gift.svg" width="18" height="18" alt="close">
+										<button type="button" id="bbox" class="btnlink">
+											<span class="text bbox-text">
+												Send this order as a Gift
+											</span>
+										</button>
+									</div>
+								</div>
+								<div class="flex-row">
+									<div class=" margin-bottom margin-left-right">
+										<span class="h-2 bbox-text">Items in the cart will be shipped to your gift
+											recipient. </span>
+									</div>
+								</div>
+							</div>
+							<div class="margin-bottom">
+								<div></div>
+							</div>
+
+							<div class="brad shadow cart_box flex-colunm" id="couponBox">
+								<div class="flex-row margin-top margin-left-right flex-row">
+									<img src="img/gift.svg" width="18" height="18" alt="close">
+									<span class="text bbox-text" id="couponsText">Apply Coupons for your order!</span>
+								</div>
+								<div class="flex-colunm margin-bottom" id="coupons"></div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="emptyCart" class="hidden flex-colunm margin-top-bottom">
+		<div class="flex-colunm item-center">
+			<img src="/img/empty-cart.png" alt="" id="emptyCartImg" class="item-center">
+			<h1 class="h-1 b margin-top-bottom center">Your Cart is Empty!</h1>
+			<span class="h-1 center">Looks like you have not added anything to your cart! Go Ahead
+				and explore our Collections.</span>
+		</div>
+	</section>
+
+	<div class="margin"></div>
+
+	<footer></footer>
+	<script src="/js/top.js" defer></script>
+	<script src="/js/cart.js"></script>
+	<!-- <script>
+		var nugget = document.getElementById('nugget');
+		var closeBtn = document.getElementById('closeBtn');
+		closeBtn.onclick = function () {
+			nugget.style.display = "none";
+		}
+	</script> -->
+
+
+</body>
+
+</html>

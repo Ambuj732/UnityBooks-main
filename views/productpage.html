@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#153a5b" />
+	<meta name="description" content="Product Page for Unity Books." />
+	<title>Product Page | Unitybooks.in</title>
+	<link rel="icon" href="img/logo.webp" type="image/x-icon" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" media="screen and (max-width: 1000px) and (min-width: 501px)" href="/css/tablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+	<link rel="stylesheet" href="/css/pp.css" />
+</head>
+
+<body>
+	<nav class="navbar flex-colunm"></nav>
+
+	<div id="top_btn" onclick="topFunction()" class="unselectable">
+		<button id="myBtn" class="unselectable" title="Go to top" type="button">
+			<svg id="topbtn" viewBox="0 0 330 330">
+				<defs>
+					<linearGradient gradientUnits="userSpaceOnUse" x1="165" y1="75" x2="165" y2="255" id="gradient-0">
+						<stop offset="0" style="stop-color: rgba(0, 46, 111, 1)"></stop>
+						<stop offset="1" style="stop-color: rgba(0, 4, 9, 1)"></stop>
+					</linearGradient>
+				</defs>
+				<path id="XMLID_224_"
+					d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z">
+				</path>
+			</svg>
+		</button>
+	</div>
+
+	<div class="navigator">
+		<span class="navigationText h-6"><a href="/">Home</a> / <a id="pLink"></a></span>
+	</div>
+	<div id="folds">
+		<div id="fold1" class="flex">
+			<div class="imgarea">
+				<div class="imggal" id="imgGallery">
+					<span id="img_url">{{product.IMG}}</span>
+				</div>
+			</div>
+			<div class="details flex">
+				<div class="name">
+					<h1 class="b h-secondary color" id="pName">{{product.NAME}}</h1>
+					<h3 class="b h-6">by <span class="b color-sec">{{product.AUTHOR}}</span></h3>
+				</div>
+				<div class="pdet flex">
+					<div class="price flex">
+						<div class="flex pricebox color">
+							<span class="h-primary">
+								<p class="hidden" id="productQty">{{product.QTY}}</p>
+								<p class="h-6 tax red hidden" id="outOfStock">Out of Stock</p>
+								<span class="price_span arial2">&#x20B9;<strike id="mrp">{{product.MRP}}</strike></span>
+								<span class="arial2 green">&#x20B9;<span id="sp">{{product.SP}}</span></span>
+								<div class="b2">
+									<span class="green arial2">Save &#x20B9;<span class="green"
+											id="discountAmt"></span></span>
+									<span class="arial2 red" id="discount">({{product.DISCOUNT}}%)</span>
+								</div>
+							</span>
+						</div>
+						<div class="flex pricebox color">
+							<div class="qty h-8 black unselectable">
+								<div class="qtybox flex item-center">
+									<span class="minus unselectable us">-</span>
+									<span class="num" id="qty">1</span>
+									<span class="plus unselectable us">+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex sidebox">
+						<a class="btn checkout_btn" id="buybtn" rel="noopener noreferrer">Buy Now</a>
+						<a class="btn checkout_btn" id="cartbtn" rel="noopener noreferrer">Add to Cart</a>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="b h-6 margin-top margin-bottom">Description</h3>
+					<span class="h-2" id="desc"></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="fold3" class="flex">
+			<div class="share flex-colunm item-center">
+				<div class="share-rows flex-row item-center share-heading checkout_btn" onclick="toggleShare()">
+					<img src="img/share.svg" alt="Share">
+					<p class="h-8">Share</p>
+				</div>
+				<div id="shareMain" class="share-rows flex-colunm w-full item-center hidden">
+					<a class="share-row flex-row w-full" id="whatsappBtn" rel="noopener noreferrer">
+						<img class="share-icons" src="img/wh_share.svg" alt="WhatsApp">
+						<p class="share-text">WhatsApp</p>
+					</a>
+					<a class="share-row flex-row w-full" id="instagramBtn" rel="noopener noreferrer">
+						<img class="share-icons" src="img/ig_share.svg" alt="Instagram">
+						<p class="share-text">Instagram</p>
+					</a>
+					<a class="share-row flex-row w-full" id="facebookBtn" rel="noopener noreferrer">
+						<img class="share-icons" src="img/fb_share.svg" alt="Facebook">
+						<p class="share-text">Facebook</p>
+					</a>
+					<a class="share-row flex-row w-full" id="twitterBtn" rel="noopener noreferrer">
+						<img class="share-icons" src="img/tw_share.svg" alt="Twitter">
+						<p class="share-text">Twitter</p>
+					</a>
+				</div>
+			</div>
+			<div class="mbg flex green-box">
+				<span>Shop Confidently with<br /><b>Unity 5X&trade; Guarantee</b></span>
+				<p class="text"><br />At Unity Books, we're all about providing a premium experience. Our exclusive
+					money-back guarantee ensures that if you ever receive a pirated book from us, we'll refund you 5X
+					the book's price.
+				</p>
+			</div>
+		</div>
+
+		<div id="fold2" class="flex">
+			<div class="udet flex brad shadow">
+				<div class="udetcol flex-row item-center">
+					<div class="udetrow flex-colunm">
+						<img src="img/secure.svg" alt="" class="udeticons">
+					</div>
+					<div class="udetrow flex-colunm h-8 b">
+						Genuine Books<br />
+						<span class="text ub">Say NO to Pirated Books</span>
+					</div>
+				</div>
+				<div class="udetcol flex-row item-center">
+					<div class="udetrow flex-colunm">
+						<img src="img/bookmark.svg" alt="" class="udeticons">
+					</div>
+					<div class="udetrow flex-colunm h-8 b">
+						Free Magnetic Bookmark<br />
+						<span class="text ub">Worth &#8377;99 FREE with every Order</span>
+					</div>
+				</div>
+				<!-- <div class="udetcol flex-row item-center">
+					<div class="udetrow flex-colunm">
+						<img src="img/payments.svg" alt="" class="udeticons">
+					</div>
+					<div class="udetrow flex-colunm h-8 b">
+						Hassle-Free Payments<br />
+						<span class="text ub">UPI, Wallets, Credit & Debit Cards, COD</span>
+					</div>
+				</div> -->
+				<div class="udetcol flex-row item-center">
+					<div class="udetrow flex-colunm">
+						<img src="img/truck.svg" alt="" class="udeticons">
+					</div>
+					<div class="udetrow flex-colunm h-8 b">
+						Free Delivery<br />
+						<span class="text ub">On Orders Above &#8377;499</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fold3"></div>
+
+		<div class="prod brad shadow" id="prod">
+			<ul class="prod-nav unselectable">
+				<li>
+					<a class="nav_link active" data-toggle="tab" id="btn2"><span id="s2"
+							class="activespan h-6">Specifications</span></a>
+				</li>
+				<li>
+					<a class="nav_link" data-toggle="tab" id="btn1"><span id="s1" class="h-6">Description</span></a>
+				</li>
+			</ul>
+			<div id="prod_details">
+				<div class="udet flex">
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/condition.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">Condition</span>{{product.COND}}
+						</div>
+					</div>
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/language.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">Language</span>{{product.LANG}}
+						</div>
+					</div>
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/format.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">Format</span>{{product.FORMAT}}
+						</div>
+					</div>
+				</div>
+
+				<div class="udet flex">
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/isbn.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">ISBN</span>{{product.ISBN}}
+						</div>
+					</div>
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/pages.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">No. of Pages</span>{{product.PAGES}}
+						</div>
+					</div>
+					<div class="udetcol flex-row item-center">
+						<div class="udetrow flex-colunm">
+							<img src="img/weight.svg" alt="" class="udeticons">
+						</div>
+						<div class="udetrow flex-colunm h-8 b">
+							<span class="text ub">Weight</span>{{product.WEIGHT}}g
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="prod_desc">
+				<p class="pbox h-6" id="prodDesc">
+					{{product.DESCRIPTION}}
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="footer"></footer>
+	<script src="/js/top.js" defer></script>
+	<script src="/js/productPage.js" defer></script>
+	<script src="/js/addToCart.js"></script>
+</body>
+
+</html>

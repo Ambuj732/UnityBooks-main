@@ -1,0 +1,66 @@
+/* SideBar */
+.sidebar {
+	width: 62px;
+	min-width: 62px;
+}
+
+.sidebar-menu {
+	gap: 20px;
+}
+
+.sidebar-item {
+	padding: 8px 20px;
+	gap: 20px;
+}
+
+.sidebar-text,
+.sign-out {
+	display: none;
+}
+
+.sidebar-icons {
+	width: 22px;
+	height: 22px;
+}
+
+/* Screen */
+
+.screen {
+	margin-left: 62px;
+	width: calc(100dvw - 62px);
+}
+
+/* Search Bars */
+
+.search-box {
+	width: 82.5%;
+	height: 30px;
+	padding: 10px;
+	border-top-left-radius: 5.5px;
+	border-bottom-left-radius: 5.5px;
+	font-size: 12px;
+	border: 3.5px solid #ffffff;
+}
+
+.search input:focus,
+.search-box:hover {
+	border: 3.5px solid #c0daec;
+}
+
+.search-btn {
+	width: 17.5%;
+	height: 30px;
+	font-size: 12px;
+	border: 3px solid #002e6f;
+	border-top-right-radius: 5.5px;
+	border-bottom-right-radius: 5.5px;
+}
+
+.search-box::placeholder {
+	font-size: 12px;
+}
+
+.search svg {
+	width: 4.25vw;
+	height: auto;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<meta name="description" content="Login page for accessing Unity Books Sales Dashboard">
+	<title>Inventory | Sales Dashboard | Unitybooks.In</title>
+	<link rel="icon" href="../img/logo.webp" type="image/x-icon">
+	<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" media="screen and (min-width: 801px) and (max-width: 1200px)" href="/css/adminTablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="/css/adminPhone.css">
+	<link rel="stylesheet" href="/css/adminInventory.css">
+</head>
+
+<body class="flex-colunm">
+	<header class="topbar"></header>
+	<section class="mainPage flex-row">
+		<nav class="sidebar flex-colunm"></nav>
+		<main class="screen">
+			<section class="header flex-row">
+				<div class="top-heading flex-colunm">
+					<h1 class="heading">Products</h1>
+					<h4 class="sub-heading">Lets grow your Store! Create your Products and upload here</h4>
+				</div>
+				<div class="header-btn flex-colunm">
+					<button type="button" class="btn" id="addProduct"
+						onclick="window.location.href='/admin/inventoryAddProduct'">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g id="Property 1=Variant2">
+								<mask id="mask0_122_2205" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+									width="24" height="24">
+									<rect id="Bounding box" width="24" height="24" fill="#D9D9D9"></rect>
+								</mask>
+								<g mask="url(#mask0_122_2205)">
+									<path id="add"
+										d="M11.0001 13H6.00006C5.71673 13 5.47923 12.9042 5.28756 12.7125C5.09589 12.5208 5.00006 12.2833 5.00006 12C5.00006 11.7167 5.09589 11.4792 5.28756 11.2875C5.47923 11.0958 5.71673 11 6.00006 11H11.0001V6C11.0001 5.71667 11.0959 5.47917 11.2876 5.2875C11.4792 5.09583 11.7167 5 12.0001 5C12.2834 5 12.5209 5.09583 12.7126 5.2875C12.9042 5.47917 13.0001 5.71667 13.0001 6V11H18.0001C18.2834 11 18.5209 11.0958 18.7126 11.2875C18.9042 11.4792 19.0001 11.7167 19.0001 12C19.0001 12.2833 18.9042 12.5208 18.7126 12.7125C18.5209 12.9042 18.2834 13 18.0001 13H13.0001V18C13.0001 18.2833 12.9042 18.5208 12.7126 18.7125C12.5209 18.9042 12.2834 19 12.0001 19C11.7167 19 11.4792 18.9042 11.2876 18.7125C11.0959 18.5208 11.0001 18.2833 11.0001 18V13Z"
+										fill="#F9FBFC"></path>
+								</g>
+							</g>
+							<defs>
+								<linearGradient id="gradient" x1="10.9496" y1="0.202453" x2="23.3069" y2="15.5271"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#120125"></stop>
+									<stop offset="0.375" stop-color="#09184A"></stop>
+									<stop offset="1" stop-color="#002E6F"></stop>
+								</linearGradient>
+							</defs>
+						</svg>
+						<span>Add Product</span>
+					</button>
+				</div>
+			</section>
+			<section class="menu">
+				<button id="published" class="menu-item active" onclick="menu(this.id)">Published</button>
+				<button id="review" class="menu-item" onclick="menu(this.id)">Under Review</button>
+			</section>
+			<section class="products-container flex-colunm item-start">
+				<div class="product-headers flex-row shadow unselectable">
+					<div class="product-header">
+						<div class="checkbox" id="check-all" onclick="check(this.id)"><svg class="check-icon" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<mask id="mask0_33_557" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+									width="24" height="24">
+									<rect width="24" height="24" fill="#F9FBFC" />
+								</mask>
+								<g mask="url(#mask0_33_557)">
+									<path
+										d="M9.99991 12.775L15.4999 7.27505C15.8166 6.95838 16.1832 6.80005 16.5999 6.80005C17.0166 6.80005 17.3832 6.95838 17.6999 7.27505C18.0166 7.59172 18.1749 7.96255 18.1749 8.38755C18.1749 8.81255 18.0166 9.18338 17.6999 9.50005L11.1249 16.1C10.8082 16.4167 10.4332 16.575 9.99991 16.575C9.56658 16.575 9.19158 16.4167 8.87491 16.1L6.27491 13.5C5.95824 13.1834 5.80408 12.8125 5.81241 12.3875C5.82074 11.9625 5.98324 11.5917 6.29991 11.275C6.61658 10.9584 6.98741 10.8 7.41241 10.8C7.83741 10.8 8.20824 10.9584 8.52491 11.275L9.99991 12.775Z"
+										fill="#F9FBFC" />
+								</g>
+							</svg>
+						</div>
+					</div>
+					<div class="product-header name">
+						<span>Name</span>
+					</div>
+					<div class="product-header price">
+						<span>Price</span>
+					</div>
+					<div class="product-header price">
+						<span>MRP</span>
+					</div>
+					<div class="product-header seller">
+						<span>Weight</span>
+					</div>
+					<div class="product-header view">
+						<span>View</span>
+					</div>
+				</div>
+			</section>
+		</main>
+	</section>
+	<script src="/js/admin-sidebar.js" defer></script>
+	<script src="/js/admin-topbar.js" defer></script>
+	<script src="/js/admin-menu.js" defer></script>
+	<script src="/js/adminInventory.js" defer></script>
+</body>
+
+</html>

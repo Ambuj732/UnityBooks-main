@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<meta name="description" content="Login page for accessing Unity Books Sales Dashboard">
+	<title>Add Product | Inventory | Sales Dashboard | Unitybooks.In</title>
+	<link rel="icon" href="../img/logo.webp" type="image/x-icon">
+	<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" media="screen and (min-width: 801px) and (max-width: 1200px)" href="/css/adminTablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="/css/adminPhone.css">
+	<link rel="stylesheet" href="/css/adminInventoryAddProduct.css">
+</head>
+
+<body class="flex-colunm">
+	<header class="topbar"></header>
+	<section class="mainPage flex-row">
+		<nav class="sidebar flex-colunm"></nav>
+		<main class="screen">
+			<section class="header flex-row">
+				<div class="top-heading flex-colunm">
+					<h1 class="heading">Add Product</h1>
+					<h4 class="sub-heading">Press Save Button after filling the details to Add a Product</h4>
+				</div>
+				<div class="header-btn flex-colunm">
+					<button type="button" class="btn" id="addProduct" onclick="addProduct()">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<mask id="mask0_122_1264" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+								width="24" height="24">
+								<rect width="24" height="24" fill="#D9D9D9"></rect>
+							</mask>
+							<g mask="url(#mask0_122_1264)">
+								<path
+									d="M5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H16.175C16.4417 3 16.6958 3.05 16.9375 3.15C17.1792 3.25 17.3917 3.39167 17.575 3.575L20.425 6.425C20.6083 6.60833 20.75 6.82083 20.85 7.0625C20.95 7.30417 21 7.55833 21 7.825V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5ZM19 7.85L16.15 5H5V19H19V7.85ZM12 18C12.8333 18 13.5417 17.7083 14.125 17.125C14.7083 16.5417 15 15.8333 15 15C15 14.1667 14.7083 13.4583 14.125 12.875C13.5417 12.2917 12.8333 12 12 12C11.1667 12 10.4583 12.2917 9.875 12.875C9.29167 13.4583 9 14.1667 9 15C9 15.8333 9.29167 16.5417 9.875 17.125C10.4583 17.7083 11.1667 18 12 18ZM7 10H14C14.2833 10 14.5208 9.90417 14.7125 9.7125C14.9042 9.52083 15 9.28333 15 9V7C15 6.71667 14.9042 6.47917 14.7125 6.2875C14.5208 6.09583 14.2833 6 14 6H7C6.71667 6 6.47917 6.09583 6.2875 6.2875C6.09583 6.47917 6 6.71667 6 7V9C6 9.28333 6.09583 9.52083 6.2875 9.7125C6.47917 9.90417 6.71667 10 7 10Z"
+									fill="#F9FBFC"></path>
+							</g>
+							<defs>
+								<linearGradient id="gradient" x1="10.9496" y1="0.202453" x2="23.3069" y2="15.5271"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#120125"></stop>
+									<stop offset="0.375" stop-color="#09184A"></stop>
+									<stop offset="1" stop-color="#002E6F"></stop>
+								</linearGradient>
+							</defs>
+						</svg>
+						<span>Save</span>
+					</button>
+				</div>
+			</section>
+			<form class="product-form flex-colunm">
+				<div class="form-rows flex-row">
+					<div class="fieldset very-long">
+						<div class="form-label-box flex-row">
+							<label for="productName" class="label inter-16 mb black">Product Name</label>
+						</div>
+						<input type="text" id="productName" class="box input inter-14 black sb" required
+							name="productName">
+					</div>
+					<div class="fieldset long">
+						<div class="form-label-box flex-row">
+							<label for="isbn" class="label inter-16 mb black">ISBN</label>
+						</div>
+						<input type="number" id="isbn" class="box input inter-14 black sb" maxlength="13" minlength="10"
+							name="isbn">
+					</div>
+					<div class="fieldset long">
+						<div class="form-label-box flex-row">
+							<label for="author" class="label inter-16 mb black">Author</label>
+						</div>
+						<input type="text" id="author" class="box input inter-14 black sb" name="author">
+					</div>
+					<div class="fieldset med">
+						<div class="form-label-box flex-row">
+							<label for="format" class="label inter-16 mb black">Format</label>
+						</div>
+						<input type="text" id="format" class="box input inter-14 black sb" name="format"
+							value="PAPERBACK">
+					</div>
+					<div class="fieldset med">
+						<div class="form-label-box flex-row">
+							<label for="language" class="label inter-16 mb black">Language</label>
+						</div>
+						<input type="text" id="language" class="box input inter-14 black sb" name="language"
+							value="ENGLISH">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="condition" class="label inter-16 mb black">Condition</label>
+						</div>
+						<input type="text" id="condition" class="box input inter-14 black sb" name="condition"
+							value="NEW">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="mrp" class="label inter-16 mb black">MRP</label>
+						</div>
+						<input type="number" id="mrp" class="box input inter-14 black sb" name="mrp">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="cp" class="label inter-16 mb black">Cost Price</label>
+						</div>
+						<input type="number" id="cp" class="box input inter-14 black sb" name="cp">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="sp" class="label inter-16 mb black">Selling Price</label>
+						</div>
+						<input type="number" id="sp" class="box input inter-14 black sb" name="sp">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="quantity" class="label inter-16 mb black">Quantity</label>
+						</div>
+						<input type="number" id="quantity" class="box input inter-14 black sb" name="quantity"
+							value="1">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="pages" class="label inter-16 mb black">No. of Pages</label>
+						</div>
+						<input type="number" id="pages" class="box input inter-14 black sb" name="pages">
+					</div>
+					<div class="fieldset short">
+						<div class="form-label-box flex-row">
+							<label for="weight" class="label inter-16 mb black">Weight</label>
+						</div>
+						<input type="number" id="weight" class="box input inter-14 black sb" name="weight" value="200">
+					</div>
+					<div class="fieldset full">
+						<div class="form-label-box flex-row">
+							<label for="description" class="label inter-16 mb black">Description</label>
+						</div>
+						<textarea rows="4" id="description" class="box input textarea inter-14 black sb"
+							name="description"></textarea>
+					</div>
+					<div class="last-row margin-top flex-row item-space-between">
+						<!-- <div class="image-uploader box flex-colunm item-center">
+							<svg class="image-uploader-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<mask id="mask0_256_420" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+									width="60" height="60">
+									<rect width="60" height="60" fill="#D9D9D9" />
+								</mask>
+								<g mask="url(#mask0_256_420)">
+									<path
+										d="M11.4078 53.6849C9.95082 53.6849 8.71428 53.1803 7.6982 52.1711C6.68211 51.1619 6.17407 49.9337 6.17407 48.4864V11.5218C6.17407 10.0648 6.68211 8.82825 7.6982 7.81217C8.71428 6.79613 9.95082 6.28811 11.4078 6.28811H35.6768V11.5218H11.4078V48.4864H48.3725V24.2093H53.5708V48.4864C53.5708 49.9337 53.0497 51.1619 52.0073 52.1711C50.965 53.1803 49.7534 53.6849 48.3725 53.6849H11.4078ZM43.8956 21.5218V16.0435H38.3996V11.64H43.878V6.14404H48.2815V11.6046H53.7774V16.0258H48.2991V21.5218H43.8956ZM14.7203 42.5218H45.0681L35.8861 30.3289L27.9567 40.7854L22.0546 33.0082L14.7203 42.5218Z"
+										fill="url(#paint0_linear_256_420)" />
+								</g>
+								<defs>
+									<linearGradient id="paint0_linear_256_420" x1="26.404" y1="-10.1473" x2="68.3549"
+										y2="41.9455" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#120125" />
+										<stop offset="0.375" stop-color="#09184A" />
+										<stop offset="1" stop-color="#002E6F" />
+									</linearGradient>
+								</defs>
+							</svg>
+
+							<div class="inter-14 mb gradient">Click to Upload Image</div>
+						</div> -->
+
+						<div class="fieldset short">
+							<div class="form-label-box flex-row">
+								<label for="img" class="label inter-16 mb black">Image Link</label>
+							</div>
+							<input type="text" id="img" class="box input inter-14 black sb" name="img">
+						</div>
+
+						<div class="flex-colunm item-space-between item-stretch">
+							<div class="fieldset full">
+								<div class="form-label-box flex-row">
+									<label for="category-1" class="label inter-16 mb black">Category 1</label>
+								</div>
+								<input type="text" id="category-1" class="box input inter-14 black sb"
+									name="category-1">
+							</div>
+							<div class="fieldset full">
+								<div class="form-label-box flex-row">
+									<label for="category-2" class="label inter-16 mb black">Category 2</label>
+								</div>
+								<input type="text" id="category-2" class="box input inter-14 black sb"
+									name="category-2">
+							</div>
+						</div>
+
+						<div class="cat-options">
+							<div class="cat-box box" id="bestsellers" onclick="catboxClicked(this.id)">
+								<span class="cat-text">bestsellers</span>
+							</div>
+							<div class=" cat-box box" id="self-help" onclick="catboxClicked(this.id)">
+								<span class="cat-text">self-help</span>
+							</div>
+							<div class="cat-box box" id="biography" onclick="catboxClicked(this.id)">
+								<span class="cat-text">biography</span>
+							</div>
+							<div class="cat-box box" id="romance" onclick="catboxClicked(this.id)">
+								<span class="cat-text">romance</span>
+							</div>
+							<div class="cat-box box" id="manga" onclick="catboxClicked(this.id)">
+								<span class="cat-text">manga</span>
+							</div>
+							<div class="cat-box box" id="suspense_thriller" onclick="catboxClicked(this.id)">
+								<span class="cat-text">suspense thriller</span>
+							</div>
+							<div class="cat-box box" id="mythology" onclick="catboxClicked(this.id)">
+								<span class="cat-text">mythology</span>
+							</div>
+							<div class="cat-box box" id="business_&_entrepreneur" onclick="catboxClicked(this.id)">
+								<span class="cat-text">business & entrepreneur</span>
+							</div>
+							<div class="cat-box box" id="young_adult" onclick="catboxClicked(this.id)">
+								<span class="cat-text">young adult</span>
+							</div>
+							<div class="cat-box box" id="fantasy" onclick="catboxClicked(this.id)">
+								<span class="cat-text">fantasy</span>
+							</div>
+							<div class="cat-box box" id="gujarati" onclick="catboxClicked(this.id)">
+								<span class="cat-text">gujarati</span>
+							</div>
+							<div class="cat-box box" id="trading" onclick="catboxClicked(this.id)">
+								<span class="cat-text">trading</span>
+							</div>
+							<div class="cat-box box" id="motivation" onclick="catboxClicked(this.id)">
+								<span class="cat-text">motivation</span>
+							</div>
+							<div class="cat-box box" id="investing" onclick="catboxClicked(this.id)">
+								<span class="cat-text">investing</span>
+							</div>
+							<div class="cat-box box" id="contemporary_fiction" onclick="catboxClicked(this.id)">
+								<span class="cat-text">contemporary fiction</span>
+							</div>
+							<div class="cat-box box" id="religion" onclick="catboxClicked(this.id)">
+								<span class="cat-text">religion</span>
+							</div>
+							<div class="cat-box box" id="personal_finance" onclick="catboxClicked(this.id)">
+								<span class="cat-text">personal finance</span>
+							</div>
+							<div class="cat-box box" id="sci-fi" onclick="catboxClicked(this.id)">
+								<span class="cat-text">sci-fi</span>
+							</div>
+							<div class="cat-box box" id="spirituality" onclick="catboxClicked(this.id)">
+								<span class="cat-text">spirituality</span>
+							</div>
+							<div class="cat-box box" id="historical_fiction" onclick="catboxClicked(this.id)">
+								<span class="cat-text">historical fiction</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</main>
+	</section>
+	<script src="/js/admin-sidebar.js" defer></script>
+	<script src="/js/admin-topbar.js" defer></script>
+	<script src="/js/adminCatbox.js" defer></script>
+	<script src="/js/adminInventoryAddProduct.js" defer></script>
+</body>
+
+</html>

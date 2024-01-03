@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<title>Add Address | Unity Books | Unitybooks.In</title>
+	<meta name="description"
+		content="Create an New Unity Books Account to Unlock and Enjoy all Features. We Offer Logging in securely using OTP or your Password">
+	<link rel="icon" href="img/logo.webp" type="image/x-icon">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/contact.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/css/signup.css">
+	<link rel="stylesheet" href="/css/addAddress.css">
+	<link rel="stylesheet" media="screen and (max-width: 1000px) and (min-width: 501px)" href="/css/tablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+</head>
+
+<body>
+
+	<nav class="navbar flex-colunm"></nav>
+
+	<div id="top_btn" onclick="topFunction()" class="unselectable">
+		<button id="myBtn" class="unselectable" title="Go to top" type="button">
+			<svg id="topbtn" viewBox="0 0 330 330">
+				<defs>
+					<linearGradient gradientUnits="userSpaceOnUse" x1="165" y1="75" x2="165" y2="255" id="gradient-0">
+						<stop offset="0" style="stop-color: rgba(0, 46, 111, 1)"></stop>
+						<stop offset="1" style="stop-color: rgba(0, 4, 9, 1)"></stop>
+					</linearGradient>
+				</defs>
+				<path id="XMLID_224_"
+					d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z">
+				</path>
+			</svg>
+		</button>
+	</div>
+
+	<section id="loader" class="flex item-center margin-top-bottom">
+		<div class="loadingio-spinner-rolling-suds4nfwr6">
+			<div class="ldio-mmfzwmfmbii">
+				<div></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="login-container" id="login-container">
+		<div class="inner-box" id="card">
+			<div class="card-front">
+				<div class="heading-box margin-bottom">
+					<h1 class="headings">ADD ADDRESS</h1>
+				</div>
+				<div class="wrapper">
+					<form id="signup" class="signin-box" name="signup" action="/setData/address" method="POST">
+						<!-- Step 3: Address Part 1 -->
+						<div class="step step-3 item-center">
+							<div class="flex-row">
+								<div class="fields">
+									<label for="A1" class="field-name">Address Line 1</label>
+									<input type="text" class="field-value" id="A1" name="A1"
+										placeholder="House/Flat Number" required>
+								</div>
+								<div class="fields">
+									<label for="A2" class="field-name">Address Line 2</label>
+									<input type="text" class="field-value" id="A2" name="A2" placeholder="Area/Locality"
+										required>
+								</div>
+							</div>
+							<div class="flex-row">
+								<div class="fields">
+									<label for="Acity" class="field-name">City</label>
+									<input type="text" class="field-value" id="Acity" name="Acity" placeholder="City"
+										required>
+								</div>
+								<div class="fields">
+									<label for="Astate" class="field-name">State</label>
+									<input type="text" class="field-value" id="Astate" name="Astate" placeholder="State"
+										required>
+								</div>
+							</div>
+							<div class="flex-row">
+								<div class="fields">
+									<label for="Apin" class="field-name">Pin/Zip Code</label>
+									<input type="number" class="field-value" id="Apin" name="Apin"
+										placeholder="Pin/Zip Code" minlength="6" maxlength="6" required>
+								</div>
+								<div class="fields">
+									<label for="cPhone" class="field-name">Phone Number</label>
+									<input type="tel" class="field-value" id="cPhone" name="cPhone"
+										placeholder="Phone Number" minlength="10" required>
+								</div>
+							</div>
+							<div class="fields flex-colunm item-center">
+								<label for="Aname" class="field-name">Address Name</label>
+								<input type="text" class="field-value" id="Aname" name="Aname" placeholder="Home/Office"
+									value="Home">
+							</div>
+							<div class="bottom flex-row-reverse item-center">
+								<button type="submit" class="btn nextBtn" id="submitBtn">Add Address</button>
+							</div>
+						</div>
+						<div class="error-box item-center">
+							<p id="error-box" class="center"></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer"></footer>
+
+	<script src="/js/addAddress.js"></script>
+	<script src="/js/top.js" defer></script>
+	<script src="https://code.tidio.co/ufriqkuzgsmydnrgsljmniwth2aedpfm.js" async></script>
+
+</body>
+
+</html>

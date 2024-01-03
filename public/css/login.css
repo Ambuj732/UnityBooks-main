@@ -1,0 +1,376 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+}
+
+#load-box {
+    z-index: 5;
+}
+
+.dbl-field .field {
+    width: 100%;
+    margin: 2vh 0;
+}
+
+.form {
+    margin: 3vh 2vw;
+    margin-top: 0;
+}
+
+.form .dbl-field {
+    margin-bottom: 0px;
+}
+
+#error {
+    color: red;
+}
+
+.ediv {
+    /* display: none; */
+    transition: 1s;
+}
+
+/* 
+.show {
+    display: block;
+} */
+
+.btn {
+    border: 3.5px solid var(--color-primary);
+}
+
+.btn:hover {
+    border: 3.5px solid var(--color-primary);
+}
+
+.wrapper {
+    border-radius: 5px;
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+}
+
+.card-front .wrapper {
+    width: 80%;
+}
+
+.card-back .wrapper {
+    width: 40%;
+}
+
+.login-container {
+    align-items: center;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+#login-container {
+    height: calc(100vh - (70px + 1vh));
+    margin: auto;
+}
+
+.inner-box {
+    align-items: center;
+    position: relative;
+    width: 100%;
+    transition: transform .01s;
+    transform-style: preserve-3d;
+}
+
+.field ::placeholder {
+    color: rgb(0, 0, 0);
+    font-family: 'Heebo';
+}
+
+#passbtn,
+#otpbtn {
+    letter-spacing: 0.05rem;
+}
+
+.form img {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    color: var(--color-primary);
+    height: 17px;
+    width: auto;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.card-front,
+.card-back {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    margin-top: 10vh;
+}
+
+.card-front .flex-row {
+    width: 80%;
+}
+
+.eye {
+    position: absolute;
+}
+
+#hide1,
+#hide1r {
+    display: none;
+}
+
+.anc {
+    text-decoration: none;
+    color: var(--color-primary);
+    display: block;
+    font-size: 2.7vh;
+    text-align: end;
+    margin-bottom: 1vh;
+}
+
+.box {
+    width: 100%;
+    margin: 12px 0px;
+    display: flex;
+}
+
+#msg {
+    font-size: 6px;
+    margin-top: 5px;
+    position: absolute;
+    display: none;
+}
+
+#crtaccbtn {
+    width: 75%;
+    margin-top: 25px;
+    letter-spacing: 0.05rem;
+}
+
+#crtaccbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: max(1.2vw, 12px);
+}
+
+.newc {
+    background-color: #f2f2f27a;
+    padding: 2vh 2vw;
+    border-radius: 15px;
+
+}
+
+.newc .btn {
+    margin-bottom: 2vh !important;
+}
+
+#crtaccbox ul {
+    display: block;
+    padding-left: 4rem;
+}
+
+#crtaccbox ul li {
+    list-style: disc;
+    padding: 2px;
+}
+
+#crtaccbox span {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 2px;
+}
+
+.btnbox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2.5vh;
+}
+
+.login-btn {
+    width: 65%;
+    padding: 1.5vh 2.5vw;
+    font-size: 1.25vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.card-back .login-btn {
+    margin: 8px 0;
+}
+
+.card-back .wrapper {
+    margin-top: 0%;
+}
+
+.sub {
+    /* font-size: 13px; */
+    position: relative;
+}
+
+.sub::after {
+    content: '\27a4';
+    color: var(--white);
+    font-size: 13px;
+    transition: all 400ms ease-in;
+}
+
+.sub:hover::after {
+    color: var(--color-primary);
+}
+
+#resend {
+    position: relative;
+    bottom: 0.98rem;
+}
+
+/* #password{
+    display: block;
+}
+
+#pass-text{
+    display: block;
+} */
+
+#otp {
+    display: none;
+}
+
+#otp-text {
+    display: none;
+}
+
+#passbtn {
+    display: none;
+}
+
+/* #otpbtn{
+    display: block;
+} */
+
+.btn {
+    background-color: #002e6f;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+@media screen and (max-width: 1000px) and (min-width:501px) {
+
+    .card-front,
+    .card-back {
+        margin-bottom: 0;
+    }
+
+    .form {
+        margin: 1vh 1vw;
+        margin-top: 0;
+    }
+
+    .card-back .wrapper,
+    .card-front .wrapper {
+        margin-top: 0;
+        width: 65%;
+    }
+
+    .card-front .flex-row {
+        width: 90%;
+    }
+
+    .dbl-field .field {
+        width: 100%;
+        margin: 1vh 0;
+    }
+
+    .anc {
+        font-size: 2vw;
+    }
+
+    .btn {
+        font-size: 3.5vw;
+        /* padding: 1vh 0 !important; */
+        width: 40vw;
+    }
+
+    #crtaccbtn {
+        font-size: 1.75vw;
+    }
+
+    .newc {
+        padding: 1vh 2vw;
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form {
+        margin: 1vh 1vw;
+        margin-top: 0;
+    }
+
+    .card-front .flex-row {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card-back .wrapper,
+    .card-front .wrapper {
+        margin-top: 0;
+        width: 90%;
+    }
+
+    .dbl-field .field {
+        width: 100%;
+        margin: 1vh 0;
+    }
+
+    .anc {
+        font-size: 4vw !important;
+    }
+
+    .btn {
+        font-size: 4vw !important;
+        padding: 1vh 0 !important;
+        width: 45vw;
+    }
+
+    .btn:hover {
+        border: 3px solid var(--color-primary) !important;
+    }
+
+    #crtaccbtn {
+        font-size: 4vw !important;
+        margin-top: 1vh !important;
+    }
+
+    #crtaccbox {
+        width: 90%;
+    }
+
+    .newc {
+        padding: 0vh 4vw;
+    }
+
+    #crtaccbox ul {
+        padding-left: 10vw;
+    }
+
+
+}

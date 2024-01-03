@@ -1,0 +1,222 @@
+#aboutus {
+    margin: 2rem 5rem;
+    padding: 10px;
+    margin-top: 0rem;
+}
+
+.navcomprow2 a {
+    color: black;
+}
+
+.navcomprow2 {
+    position: absolute;
+    top: 21vh;
+    left: 35px;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 6px;
+    width: 20vw;
+    background-color: rgb(254, 254, 254);
+    padding: 1vh 1vw;
+}
+
+#hlpt {
+    margin-top: 1rem;
+}
+
+.flex-row .pbox {
+    margin-left: 12.5vw;
+}
+
+ul li {
+    list-style: none;
+}
+
+ol,
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.text ul li {
+    padding: 0.25rem 1.5rem;
+}
+
+ol li {
+    /* margin: 5px 0; */
+    list-style: none;
+}
+
+.pol-ui li {
+    margin: 5px 10px;
+    list-style: disc;
+}
+
+.navcomphr {
+    width: 100%;
+    size: 1px;
+    color: rgb(208, 208, 208);
+}
+
+.navcomprow2 a:hover {
+    color: rgb(132, 168, 199);
+}
+
+.navcomp {
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.aboutus1 {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.aboutus1 .h-primary {
+    margin-bottom: 5px;
+}
+
+.aboutus1 img {
+    align-items: center;
+    margin: 1rem 0;
+    width: 55%;
+    height: auto;
+}
+
+.policy {
+    margin: 2rem 5rem;
+    padding: 10px;
+}
+
+span {
+    margin-top: 1rem;
+}
+
+.pol-head {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.disc {
+    color: red;
+}
+
+.pol-ui {
+    margin-left: 2rem;
+}
+
+@media screen and (min-width: 501px) and (max-width:1000px) {
+    #aboutus {
+        margin: 0;
+    }
+
+    .navcomprow2 {
+        width: 25vw;
+        top: 25vh;
+        left: 10px;
+    }
+
+    #hlpt {
+        margin-top: 0.5vh;
+    }
+
+    .flex-row .pbox {
+        margin-left: 2vw;
+    }
+
+    .text ul li {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .navcomp {
+        margin-left: 1vw;
+        margin-top: 2vh;
+    }
+
+    .aboutus1 .h-primary {
+        margin-bottom: 0px;
+    }
+
+    .aboutus1 img {
+        width: 85%;
+    }
+
+    .policy {
+        margin: 0rem 3rem;
+    }
+
+    .pol-ui {
+        margin-left: 1rem;
+    }
+
+    #firstBox {
+        margin-left: 20vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #aboutus {
+        margin: 0;
+    }
+
+    .navcomprow2 {
+        width: 30vw;
+        top: 25vh;
+        left: 10px;
+    }
+
+    .navcomprow2 span {
+        font-size: larger;
+    }
+
+    #hlpt {
+        margin-top: 0.5vh;
+    }
+
+    #hlpt span ul {
+        font-size: small;
+    }
+
+    .flex-row .pbox {
+        margin-left: 2vw;
+    }
+
+    .text ul li {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .navcomp {
+        margin-left: 1vw;
+        margin-top: 2vh;
+    }
+
+    .aboutus1 {
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    .aboutus1 .h-primary {
+        margin-bottom: 0px;
+    }
+
+    .aboutus1 img {
+        width: 85%;
+    }
+
+    .policy {
+        margin: 0;
+        margin-left: 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .pol-ui {
+        margin-left: 1rem;
+    }
+
+    #firstBox {
+        margin-left: 30vw;
+    }
+}

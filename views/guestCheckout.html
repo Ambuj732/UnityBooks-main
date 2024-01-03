@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<title>Guest Checkout | Unity Books | Unitybooks.In</title>
+	<meta name="description"
+		content="Review your Order Summary and Shipping Address before proceeding to the Payment page. Review and Edit Shipping Address and go back to Cart to add more Books">
+	<link rel="icon" href="img/logo.webp" type="image/x-icon">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/cart.css">
+	<link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 1000px)" href="/css/tablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+	<link rel="stylesheet" href="/css/checkout.css">
+</head>
+
+<body>
+
+	<section id="loader" class="flex item-center margin-top-bottom">
+		<div class="loadingio-spinner-rolling-suds4nfwr6">
+			<div class="ldio-mmfzwmfmbii">
+				<div></div>
+			</div>
+		</div>
+	</section>
+
+	<div class="outside" id="checkOutPage">
+		<div id="checkoutContainer">
+			<div class="flex-colunm top-bar unselectable">
+				<nav class="navbar-checkout flex-row item-center">
+					<img src="img/logo.webp" alt="logo" id="logo-checkout">
+					<h1 class="h-secondary b ltspace">Checkout</h1>
+					<a id="backToCart" class="h-2 color" href="/cart"> <img src="img/back.svg" alt="back" height="13"
+							width="auto"> Back to Cart </a>
+				</nav>
+
+				<div class="hrstyle"></div>
+
+				<div class="margin-top">
+					<div class="flex-row h-2 margin-left-right" id="timeline">
+						<div class="flex-row timeline-div">
+							<div class="b-xtra circle-box">
+								<div>1</div>
+								<img src="img/check.svg" alt="check" class="hidden">
+							</div>
+							<p class="b-xtra">Shipping</p>
+						</div>
+						<div class="flex-row timeline-div">
+							<div class="circle-box">
+								<div>2</div>
+								<img src="img/check.svg" alt="check" class="hidden">
+							</div>
+							<p>Payment</p>
+						</div>
+						<div class="flex-row timeline-div">
+							<div class="circle-box">
+								<div>3</div>
+								<img src="img/check.svg" alt="check" class="hidden">
+							</div>
+							<p>Review</p>
+						</div>
+					</div>
+				</div>
+				<div class="hrstyle"></div>
+			</div>
+
+			<div class="shipping">
+				<div class="ship-main">
+					<div class=" margin-top-bottom">
+						<div class="margin-left-right" id="shipBox">
+							<div class="brad shadow cart_box flex-colunm">
+								<div class="flex-colunm margin-left-right">
+									<p class="h-9 b header-checkout">Shipping Address</p>
+									<p class="h-8">Please provide necessary details to finish your Order</p>
+									<form id="Add" class="old" name="Add">
+										<div class="flex-row margin-top">
+											<div class="fields" id="name">
+												<label for="cName" class="field-name">Name</label>
+												<input type="text" value="" class="field-value" id="cName" name="cName"
+													required>
+											</div>
+											<div class="fields">
+												<label for="cPhone" class="field-name">Mobile</label>
+												<input type="number" value="" class="field-value" id="cPhone"
+													name="cPhone" required>
+											</div>
+										</div>
+										<div class="fields">
+											<label for="cEmail" class="field-name">Email</label>
+											<input type="email" value="" class="field-value" id="cEmail" name="cEmail"
+												required>
+										</div>
+										<div class="fields">
+											<label for="A1" class="field-name">Flat/House Number, Building</label>
+											<input type="text" value="" class="field-value" id="A1" name="A1" required>
+										</div>
+										<div class="fields">
+											<label for="A2" class="field-name">Area/Street Address</label>
+											<input type="text" value="" class="field-value" id="A2" name="A2" required>
+										</div>
+										<div class="flex-row">
+											<div class="fields">
+												<label for="Acity" class="field-name">City/Town</label>
+												<input type="text" value="" class="field-value" id="Acity" name="Acity"
+													required>
+											</div>
+											<div class="fields">
+												<label for="Astate" class="field-name">State</label>
+												<!-- <select class="field-value" id="Astate" name="Astate" form="Add"
+													required>
+													<option value="Andaman and Nicobar">Andaman and Nicobar</option>
+													<option value="Andhra Pradesh">Andhra Pradesh</option>
+													<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+													<option value="Assam">Assam</option>
+													<option value="Bihar">Bihar</option>
+													<option value="Chandigarh">Chandigarh</option>
+													<option value="Chhattisgarh">Chhattisgarh</option>
+													<option value="Diu and Damman">Diu and Damman</option>
+													<option value="Delhi">Delhi</option>
+													<option value="Goa">Goa</option>
+													<option value="Gujarat">Gujarat</option>
+													<option value="Haryana">Haryana</option>
+													<option value="Himachal Pradesh">Himachal Pradesh</option>
+													<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+													<option value="Jharkhand">Jharkhand</option>
+													<option value="Karnataka">Karnataka</option>
+													<option value="Kerala">Kerala</option>
+													<option value="Ladakh">Ladakh</option>
+													<option value="Lakshadweep">Lakshadweep</option>
+													<option value="Madhya Pradesh">Madhya Pradesh</option>
+													<option value="Maharashtra">Maharashtra</option>
+													<option value="Manipur">Manipur</option>
+													<option value="Meghalaya">Meghalaya</option>
+													<option value="Mizoram">Mizoram</option>
+													<option value="Nagaland">Nagaland</option>
+													<option value="Odisha">Odisha</option>
+													<option value="Puducherry">Puducherry</option>
+													<option value="Punjab">Punjab</option>
+													<option value="Rajasthan">Rajasthan</option>
+													<option value="Sikkim">Sikkim</option>
+													<option value="Tamil Nadu">Tamil Nadu</option>
+													<option value="Telangana" selected>Telangana</option>
+													<option value="Tripura">Tripura</option>
+													<option value="Uttar Pradesh">Uttar Pradesh</option>
+													<option value="Uttarakhand">Uttarakhand</option>
+													<option value="West Bengal">West Bengal</option>
+												</select> -->
+												<input type="text" value="" class="field-value" id="Astate"
+													name="Astate" required>
+											</div>
+											<div class="fields">
+												<label for="Apin" class="field-name">Pin code</label>
+												<input type="number" value="" class="field-value" id="Apin" name="Apin"
+													required>
+											</div>
+										</div>
+										<div class="error-box item-center">
+											<p id="error-box" class="center"></p>
+										</div>
+										<div class="fields">
+											<input type="submit" value="Continue"
+												class="checkout_btn h-secondary b flex item-center" id="submit">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+<script src="/js/addToCart.js"></script>
+<script src="/js/guestCheckout.js" defer></script>
+
+</html>

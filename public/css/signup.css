@@ -1,0 +1,77 @@
+/* Input Box */
+
+.fields {
+	margin: 20px;
+	margin-top: 0;
+	font-size: 19px;
+	color: var(--black2);
+	flex-wrap: wrap;
+}
+
+.field-name {
+	font-weight: bold;
+	font-size: 19px;
+	color: var(--black2);
+}
+
+.field-value,
+.field-value-2 {
+	margin-top: 5px;
+	margin-left: 2px;
+	padding: 12.5px 12.5px;
+	border: 1px solid #4c4c4c21;
+	-webkit-box-shadow: 0 0.75px 0.75px 0.75px #0000001d;
+	box-shadow: 0 0.75px 0.75px 0.75px #0000001d;
+	border-radius: 6px;
+	width: 100%;
+	background-color: #fff;
+	font-size: 17px;
+}
+
+.fields input:focus {
+	border: 2px solid var(--color-primary) !important;
+}
+
+.password-field {
+	position: relative;
+}
+
+.show-password-btn {
+	position: absolute;
+	top: 58%;
+	right: 10px;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.show-password-icon {
+	width: 25px;
+	height: 25px;
+	fill: #999;
+	transition: fill 0.2s;
+}
+
+.show-password-btn:hover .show-password-icon {
+	fill: #666;
+}
+
+.bottom {
+	/* position: fixed;
+	bottom: 1vh; */
+	margin: auto;
+	width: 95%;
+}
+
+.bottom .btn {
+	/* width: 65vw; */
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	max-width: 35vw;
+}
+
+input[type=checkbox] {
+	height: 25px;
+	width: 25px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#002e6f">
+    <meta name="description"
+        content="Unity Books is the best online book store in India , offers a wide range of books from novels to school and college textbooks and high-quality services, which gives the customers an outstanding experience.">
+    <title>Help & Support | Contact Us | unityboooks.in</title>
+    <link rel="icon" href="img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" media="screen and (max-width: 1000px) and (min-width: 501px)" href="/css/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+</head>
+
+<body>
+
+    <div>
+        <?php include 'message.php'; ?>
+    </div>
+
+    <nav class="navbar flex-colunm"></nav>
+
+    <div id="top_btn" onclick="topFunction()" class="unselectable">
+        <button id="myBtn" class="unselectable" title="Go to top" type="button">
+            <svg id="topbtn" viewBox="0 0 330 330">
+                <defs>
+                    <linearGradient gradientUnits="userSpaceOnUse" x1="165" y1="75" x2="165" y2="255" id="gradient-0">
+                        <stop offset="0" style="stop-color: rgba(0, 46, 111, 1)"></stop>
+                        <stop offset="1" style="stop-color: rgba(0, 4, 9, 1)"></stop>
+                    </linearGradient>
+                </defs>
+                <path id="XMLID_224_"
+                    d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394 l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393 C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <section id="contact">
+        <div class="wrapper">
+            <div class="heading-box">
+                <h1 class="headings">Contact Us</h1>
+            </div>
+            <section>
+                <div class="context">
+                    <p class="pbox h-6">
+                        Customers can directly contact us by mailing to <a target="_blank" rel="noopener noreferrer"
+                            href="mailto:falconinnov@gmail.com">falconinnov@gmail.com</a> or use the contact us
+                        form(Still
+                        under development).
+                    </p>
+                    <p class="pbox h-6">
+                        For contacting us through phone or Whatsapp, customers can use the Toll Free Number <a
+                            target="_blank" rel="noopener noreferrer"
+                            href="https://api.whatsapp.com/message/HJFV7CZRCD7BG1?autoload=1&app_absent=0">+91 -
+                            7779056420</a>
+                    </p>
+                </div>
+            </section>
+            <div class="form">
+                <div class="dbl-field">
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Enter your name">
+                        <i class='fas fa-user'></i>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Enter your email">
+                        <i class='fas fa-envelope'></i>
+                    </div>
+                </div>
+                <div class="message">
+                    <textarea placeholder="Write your message" name="message"></textarea>
+                    <i class="material-icons">message</i>
+                </div>
+                <div class="button-area">
+                    <button type="submit" class="btn">Send</button>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"></footer>
+    <script src="/js/top.js"></script>
+
+    <script>
+        // var loginpage = document.getElementById("log")
+        // var logincond = document.getElementById("login-container")
+        // function Login() {
+        //     logincond.style.display = "flex"
+        // }
+        // function SendEmail() {
+        //     Email.send({
+        //         // SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+        //         Host: "smtp.gmail.com",
+        //         Username: "anirudhbagalkotker@gmail.com",
+        //         Password: "Anirudh2001*",
+        //         To: 'webdevappdev@gmail.com',
+        //         From: document.getElementById("email").value,
+        //         Subject: "New Contact Form Enquiry",
+        //         Body: "And this is the body"
+        //     }).then(
+        //         message => alert(message)
+        //     );
+        // }
+    </script>
+    <script type="text/javascript">
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    <script src="contact.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+</body>
+
+</html>

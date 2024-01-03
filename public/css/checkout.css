@@ -1,0 +1,465 @@
+body {
+    background-color: white !important;
+}
+
+.margin-top {
+    margin-top: 1vh;
+}
+
+.margin-top-bottom {
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+}
+
+.outside {
+    padding: 15px;
+}
+
+#checkoutContainer {
+    background-color: var(--bgcol);
+}
+
+.navbar-checkout {
+    position: relative;
+    padding: 5px 0;
+}
+
+#logo-checkout {
+    height: auto;
+    width: 3.5vw;
+    position: absolute;
+    left: 10px;
+    top: 0
+}
+
+#timeline {
+    justify-content: space-between;
+    padding-bottom: 1vh;
+    width: 50vw;
+    margin: auto;
+}
+
+.timeline-div {
+    padding: 0 2vw;
+    align-items: center;
+    font-size: 3vh;
+}
+
+.circle-box {
+    background-color: black;
+    color: white;
+    padding: 2px 9px;
+    border-radius: 50%;
+    position: relative;
+    right: 5px;
+}
+
+.top-bar .hrstyle {
+    margin: 0;
+}
+
+#order_summary .hrstyle {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+}
+
+#backToCart {
+    position: absolute;
+    right: 1%;
+    bottom: 10%;
+    text-decoration: underline;
+}
+
+.shipping {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.ship-main {
+    width: 66.6666666667%;
+}
+
+.payment {
+    width: 33.3333333333%;
+}
+
+.header-checkout {
+    margin-top: 3vh;
+    margin-bottom: 0vh;
+}
+
+.check_btn {
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+.check_btn .tc {
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+    margin-bottom: 1vh;
+    padding: 0 10px;
+}
+
+#delDate {
+    display: inline-block;
+}
+
+.deldatebox {
+    margin-top: 2.5vh;
+    margin-bottom: 1vh;
+    padding: 0 8px;
+}
+
+.subTotBox {
+    padding: 10px;
+    color: rgb(100, 100, 100);
+}
+
+#checkoutarea .shadow {
+    background-color: #fff;
+}
+
+#paymentMethod {
+    margin-top: 5vh;
+}
+
+#Add {
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.fields {
+    margin: 20px 10px;
+    margin-top: 0;
+    font-size: 20px;
+    color: rgb(100, 100, 100);
+    flex-wrap: wrap;
+}
+
+.field-value {
+    margin-top: 10px;
+    margin-left: 2px;
+    padding: 7.5px 10px;
+    border: 1px solid #4c4c4c21;
+    -webkit-box-shadow: 0 0.75px 0.75px 0.75px #0000001d;
+    box-shadow: 0 0.75px 0.75px 0.75px #0000001d;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.field-value:focus {
+    border-color: var(--color-sec);
+}
+
+.flex-row .fields {
+    width: 33%;
+    margin-top: 2.5px;
+}
+
+.flex-row #name {
+    width: 64%;
+}
+
+.fields .checkout_btn {
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+/* Custom radio button styling */
+input[type="radio"] {
+    /* Hide the default radio button */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #4c4c4c21;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    /* top: 1px; */
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    /* Style for the checked state */
+    background-color: var(--bgcol);
+    border-color: var(--color-sec);
+}
+
+/* Custom radio button indicator when checked */
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 3.25px;
+    left: 3.75px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-sec);
+}
+
+@media screen and (max-width: 1000px) and (min-width: 501px) {
+    .margin-top {
+        margin-top: 1vh;
+    }
+
+    .margin-top-bottom {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    #order_summary .hrstyle {
+        margin: 0;
+    }
+
+    .outside {
+        padding: 25px;
+    }
+
+    #logo-checkout {
+        height: auto;
+        width: 5.5vw;
+        position: absolute;
+        left: 10px;
+        top: 0
+    }
+
+    #timeline {
+        justify-content: space-between;
+        padding-bottom: 1vh;
+        width: 60vw;
+        margin: auto;
+    }
+
+    .timeline-div {
+        padding: 0 1vw;
+        align-items: center;
+        font-size: 2vh;
+    }
+
+    .shipping {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .ship-main {
+        width: 100%;
+    }
+
+    .payment {
+        width: 100%;
+    }
+
+    .payment .header-checkout,
+    .ship-main .header-checkout {
+        margin-top: 1vh;
+        margin-bottom: 0vh;
+        padding-left: 1vw;
+    }
+
+    .payment .margin-top-bottom {
+        margin-top: 0;
+    }
+
+    .fields {
+        font-size: 16px;
+    }
+
+    .field-value {
+        font-size: 12px;
+    }
+
+    .subTotBox {
+        width: 30vw;
+        margin: auto;
+    }
+
+    #tot_box {
+        width: 31.5vw;
+        margin: auto;
+        margin-top: 0.25vh;
+    }
+
+    #editBtn {
+        padding: 0.75vh 1.5vw;
+        font-size: 2.25vw;
+    }
+
+    #order_summary #hrbox {
+        padding: 0 13vw;
+    }
+
+    #checkout_btn {
+        width: 70%;
+        margin: auto;
+    }
+
+    .checkout_btn {
+        font-size: 3vw;
+        padding: 1vh 2vw;
+    }
+
+    #checkoutarea {
+        margin-right: 15vw;
+        margin-left: 15vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .margin-top {
+        margin-top: 1vh;
+    }
+
+    .margin-top-bottom {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .outside {
+        padding: 15px;
+    }
+
+    #logo-checkout {
+        height: auto;
+        width: 7vw;
+        position: absolute;
+        left: 10px;
+        top: 0
+    }
+
+    #backToCart {
+        right: 2%;
+        bottom: 12.5%;
+    }
+
+    #timeline {
+        justify-content: center;
+        padding-bottom: 1vh;
+        width: 100%;
+        margin: 0;
+    }
+
+    .timeline-div {
+        padding: 0 3vw;
+        align-items: center;
+        font-size: 2vh;
+    }
+
+    .circle-box {
+        padding: 2px 8px;
+        border-radius: 50%;
+        position: relative;
+        right: 5px;
+    }
+
+    .shipping {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+
+    .ship-main,
+    .payment {
+        width: 100%;
+    }
+
+    .payment .header-checkout,
+    .ship-main .header-checkout {
+        margin-top: 1vh;
+        margin-bottom: 0vh;
+        padding-left: 1vw;
+    }
+
+    .ship-main .margin-top-bottom {
+        margin-top: 0;
+    }
+
+    #Add .flex-row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .fields {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .field-value {
+        font-size: 12px;
+    }
+
+    .flex-row .fields {
+        width: 90%;
+        margin-right: 1vw;
+    }
+
+    .flex-row #name {
+        width: 90%;
+    }
+
+    #editBtn {
+        padding: 1vh 2vw;
+        font-size: 4vw;
+    }
+
+    #order_summary #hrbox {
+        padding: 0 13vw;
+    }
+
+    #order_summary .hrstyle {
+        margin: 0;
+    }
+
+    .subTotBox {
+        width: 90%;
+        margin: auto;
+    }
+
+    #tot_box {
+        width: 90%;
+        margin: auto;
+        margin-top: 0.25vh;
+    }
+
+    #checkout_btn {
+        width: 95%;
+        margin: auto;
+        font-size: 5.5vw;
+    }
+
+    .checkout_btn {
+        padding: 1vh 1.5vw;
+    }
+
+    .deldatebox .text {
+        font-size: 4vw;
+    }
+
+    #paymentMethodBox .margin-left-right,
+    #shipBox .margin-left-right {
+        margin: 1vh 4.5vw;
+    }
+}

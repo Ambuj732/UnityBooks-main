@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta http-equiv=" X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="theme-color" content="#002e6f" />
+	<meta name="description" content="Login page for accessing Unity Books Sales Dashboard">
+	<title>Login | Sales Dashboard | Unitybooks.In</title>
+	<link rel="icon" href="../img/logo.webp" type="image/x-icon">
+	<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" media="screen and (min-width: 801px) and (max-width: 1200px)" href="/css/adminTablet.css">
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="/css/adminPhone.css">
+	<link rel="stylesheet" href="/css/adminLogin.css">
+</head>
+
+<body>
+	<main class="screen flex-colunm item-center">
+		<div class="login-container-main flex-colunm item-center">
+			<div class="login-container flex-colunm item-center box">
+				<div class="login-box flex-colunm item-center">
+					<div class="login-form-container flex-colunm item-center">
+						<div class="login-header flex-colunm item-center">
+							<div class="logo">
+								<img class="logo-img" src="../img/UNITY.webp" />
+							</div>
+							<div class="login-heading-box flex">
+								<span class="inter-21 black center b">Log in with your admin email</span>
+							</div>
+							<div class="login-heading-box flex">
+								<span class="inter-14 grey center">Use your admin email to log in to your sales
+									workspace.</span>
+							</div>
+						</div>
+						<form class="form flex-colunm item-center" id="login">
+							<div class="fieldset">
+								<div class="form-label-box flex-row w-full">
+									<label for="email" class="label inter-14 black w-full">Email</label>
+								</div>
+								<input type="email" id="email" class="box input inter-14 grey sb w-full"
+									placeholder="yourname@company.com" required name="email">
+							</div>
+							<div class="fieldset">
+								<div class="form-label-box flex-row w-full">
+									<label for="password" class="label inter-14 black w-half">Password</label>
+									<a href="/forgotPassword" class="forgot-password inter-14 color-sec w-half">Forgot
+										password?</a>
+								</div>
+								<input type="password" id="password" class="box input inter-14 grey sb w-full"
+									placeholder="Enter your password" required name="password">
+								<!-- SVG code for your button content -->
+							</div>
+							<button type="submit" class="btn" id="loginBtn">
+								<!-- SVG code for your button content -->
+								<span>Login</span>
+							</button>
+							<div class="error-box item-center">
+								<p id="error-box" class="center"></p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="seller-account flex-row item-center">
+				<span class="inter-14 black w-full center">Don’t have a seller account yet? <a
+						href="/createSellerAccount" class="color-sec">Register as a Seller</a></span>
+			</div>
+		</div>
+	</main>
+
+	<script src="/js/adminLogin.js" defer></script>
+</body>
+
+</html>

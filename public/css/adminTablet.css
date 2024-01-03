@@ -1,0 +1,49 @@
+/* SideBar */
+.sidebar-menu {
+	gap: 20px;
+}
+
+.sidebar-item {
+	padding: 8px 20px;
+	gap: 20px;
+}
+
+.sidebar-text {
+	font: 400 16px "Poppins", sans-serif;
+}
+
+.sidebar-icons {
+	width: 22px;
+	height: 22px;
+}
+
+.sign-out {
+	font: 500 16px "Poppins", sans-serif;
+}
+
+/* Search Bars */
+
+.search-box {
+	width: 87.5%;
+	border-top-left-radius: 8.5px;
+	border-bottom-left-radius: 8.5px;
+	font-size: 14px;
+	border: 3.5px solid #f3f5f7;
+}
+
+.search input:focus,
+.search-box:hover {
+	border: 3.5px solid #c0daec;
+}
+
+.search-btn {
+	width: 12.5%;
+	font-size: 14px;
+	border-top-right-radius: 8.5px;
+	border-bottom-right-radius: 8.5px;
+}
+
+.search svg {
+	width: 2.65vw;
+	height: auto;
+}

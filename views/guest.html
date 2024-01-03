@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="theme-color" content="#002e6f" />
+    <title>Checkout | Unity Books | Unitybooks.In</title>
+    <meta name="description"
+        content="Review your Order Summary and Shipping Address before proceeding to the Payment page. Review and Edit Shipping Address and go back to Cart to add more Books">
+    <link rel="icon" href="img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" media="screen and (min-width: 501px) and (max-width: 1000px)" href="/css/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/phone.css">
+    <link rel="stylesheet" href="/css/guest.css">
+</head>
+
+<body>
+    <section id="guest">
+        <div class="margin-left-right">
+            <div class="flex-colunm item-center">
+                <div id="popout" class="item-center center">
+                    <p class="h-3">Oops! You are not Logged in <br>Login to get the best shopping experience</p>
+                    <button type="button" id="login" class="btn" rel="noopener"
+                        onclick="location.href='/login'">LOGIN</button>
+                    <p class="h-3">Don't have an Account <br> Create your account in less than 2 minutes!</p>
+                    <button type="button" id="signup" class="btn" rel="noopener"
+                        onclick="location.href='/signup'">SIGNUP</button>
+                    <p class="h-3">Want to checkout now? <br> use guest checkout <br> Checkout now, create account
+                        later
+                    </p>
+                    <button type="button" id="guestCheckout" class="btn" rel="noopener"
+                        onclick="location.href='/checkout'">GUEST</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
