@@ -39,10 +39,11 @@ dotenv.config({ path: './.env' });
 
 //db connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Mummy@12345",
-    database: process.env.DATABASE
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASS,
+    database: process.env.DATABASE 
+
 })
 
 db.connect((error) => {
@@ -58,7 +59,92 @@ db.connect((error) => {
 app.listen(3000, () => {
     console.log('listening on port 3000.......');
 })
+// ----------------------------------------------------------------------------
+// api building for order table.
+// ... (Your existing code)
 
+// Order details route
+app.get("/api/order/:orderId", async (req, res) => {
+    if (req.cookies.UnityLog) {
+        let uid = await getUID(req, res);
+        let orderId = req.params.orderId;
+
+        try {
+            db.query("SELECT * FROM ORDERS WHERE UID = ? AND OID = ?", [uid, orderId], async (error, order) => {
+                if (error) {
+                    console.error(error);
+                    return res.status(500).json({
+                        success: false,
+                        error: error
+                    });
+                }
+
+                if (order.length > 0) {
+                    // Fetch order items for the specified order ID
+                    db.query("SELECT * FROM ORDER_ITEM WHERE OID = ?", [orderId], async (error, items) => {
+                        if (error) {
+                            console.error(error);
+                            return res.status(500).json({
+                                success: false,
+                                error: error
+                            });
+                        }
+
+                        // Fetch products for each order item
+                        try {
+                            const productQueries = items.map(item => {
+                                return new Promise((resolve, reject) => {
+                                    db.query("SELECT I.PID, I.BID, I.SID, I.COND, I.QTY, I.CP, I.SP, I.DISCOUNT, I.LANG, B.ISBN, B.NAME, B.MRP, B.DESCRIPTION, B.IMG, B.AUTHOR, B.FORMAT, B.PAGES, B.WEIGHT, B.REVIEW FROM INVENTORY I JOIN BOOKS B ON I.BID = B.BID WHERE I.PID = ?;", [item.PID], (error, product) => {
+                                        if (error) {
+                                            console.error(error);
+                                            reject(error);
+                                        } else {
+                                            let prod = product[0];
+                                            resolve(prod);
+                                        }
+                                    });
+                                });
+                            });
+
+                            // Wait for all queries to complete
+                            const products = await Promise.all(productQueries);
+
+                            return res.status(200).json({
+                                success: true,
+                                order: order[0],
+                                orderItems: items,
+                                products: products
+                            });
+                        } catch (error) {
+                            console.error(error);
+                            return res.status(500).json({
+                                success: false,
+                                error: error
+                            });
+                        }
+                    });
+                } else {
+                    return res.status(404).json({
+                        success: false,
+                        error: "Order not found"
+                    });
+                }
+            });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({
+                success: false,
+                error: error
+            });
+        }
+    } else {
+        res.status(401).redirect("/login");
+    }
+});
+
+// ... (Your existing code)
+
+// --------------------------------------------------------
 //routes
 // app.use('/', require('./routes/routes'));
 app.use('/auth', require('./routes/auth'));
