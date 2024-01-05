@@ -59,15 +59,7 @@ db.connect((error) => {
 app.listen(3000, () => {
     console.log('listening on port 3000.......');
 })
-// ----------------------------------------------------------------------------
-// api building for order table.
-app.get('/api/orders', (req, res) => {
-    db.query('SELECT O.DID,O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I  ON  O.OID = I.OID ', (err, results) => {
-        if (err) throw err;
-        res.json(results);
-    });
-});
-// --------------------------------------------------------
+
 //routes
 // app.use('/', require('./routes/routes'));
 app.use('/auth', require('./routes/auth'));

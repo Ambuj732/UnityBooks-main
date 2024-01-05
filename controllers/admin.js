@@ -486,7 +486,7 @@ exports.orderDet = async (req, res) => {
 								return new Promise((resolve, reject) => {
 									db.query("SELECT * FROM INVENTORY I JOIN BOOKS B ON I.BID = B.BID WHERE I.PID = ?;", [item.PID], (error, product) => {
 										if (error) {
-											errorMsg(res, error, "Internal Server Error", 500, id);
+												errorMsg(res, error, "Internal Server Error", 500, id);
 											reject(error);
 										} else {
 											let prod = product[0];
@@ -511,6 +511,47 @@ exports.orderDet = async (req, res) => {
 		});
 	} catch (error) { errorMsg(error, "Internal Server Error", 500, sid); }
 }
+
+// ----------------------------------------------------------------------------
+// api building for order table.
+// express().get('/api/getOrders', (req, res) => {
+//     db.query('SELECT O.DID,O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I  ON  O.OID = I.OID ', (err, results) => {
+//         if (err) throw err;
+//         res.json(results);
+//     });
+// });
+const isAdmin = (req) => {
+    // Assuming you have a role property in your user object, and 'admin' represents an admin user
+    return req.user && req.user.role === 'admin';
+};
+
+express().get('/api/getOrders', (req, res) => {
+    // Check if the user is an admin
+    const admin = isAdmin(req);
+
+    let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID';
+
+    if (!admin) {
+        // If not admin, add a WHERE clause to filter by user ID
+        if (req.user) {
+            query += ` WHERE O.UID = ${req.user.id}`;
+        } else {
+            // If no user information is available, throw a 400 error
+            return res.status(400).json({ error: 'Invalid user information' });
+        }
+    }
+
+    db.query(query, (err, results) => {
+        if (err) {
+            // Handle errors and throw a 400 error
+            return res.status(400).json({ error: 'Error retrieving orders' });
+        }
+        res.json(results);
+    });
+});
+
+// --------------------------------------------------------
+
 
 /**
  * Retrieves the user ID (UID) from the decoded JWT token stored in the admin cookie.
