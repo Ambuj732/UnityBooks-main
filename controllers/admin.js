@@ -532,7 +532,7 @@ express().get('/api/getOrders', (req, res) => {
     let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID';
 
     if (!admin) {
-        // If not admin, add a WHERE clause to filter by user ID
+        // If not admin, add a WHERE clause to filter by user ID  
         if (req.user) {
             query += ` WHERE O.UID = ${req.user.id}`;
         } else {
