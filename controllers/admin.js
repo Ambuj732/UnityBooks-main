@@ -527,9 +527,8 @@ const isAdmin = (req) => {
 
 express().get('/api/getOrders', (req, res) => {
     // Check if the user is an admin
-    const admin = isAdmin(req);
-
-    let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID';
+    const admin =getRole(req);
+    let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID'; 
 
     if (!admin) {
         // If not admin, add a WHERE clause to filter by user ID  
