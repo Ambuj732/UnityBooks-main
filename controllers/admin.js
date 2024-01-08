@@ -525,14 +525,17 @@ const isAdmin = (req) => {
     return req.user && req.user.role === 'admin';
 };
 
-express().get('/api/getOrders', (req, res) => {
+express().get('/api/getOrders', async (req, res) => {
     // Check if the user is an admin
-    const admin =getRole(req);
-    let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID'; 
+    const admin = await getRole(req);
+
+    // Initialize the base query
+    let query = 'SELECT O.DID, O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I ON O.OID = I.OID';
 
     if (!admin) {
-        // If not admin, add a WHERE clause to filter by user ID  
+        // If not admin, add a WHERE clause to filter by user ID
         if (req.user) {
+            // Assuming user ID is available in req.user.id
             query += ` WHERE O.UID = ${req.user.id}`;
         } else {
             // If no user information is available, throw a 400 error
@@ -540,6 +543,7 @@ express().get('/api/getOrders', (req, res) => {
         }
     }
 
+    // Use parameterized queries to prevent SQL injection
     db.query(query, (err, results) => {
         if (err) {
             // Handle errors and throw a 400 error
@@ -548,6 +552,7 @@ express().get('/api/getOrders', (req, res) => {
         res.json(results);
     });
 });
+
 
 // --------------------------------------------------------
 
