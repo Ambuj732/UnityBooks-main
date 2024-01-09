@@ -740,13 +740,6 @@ exports.orderDet = async (req, res) => {
 };
 
 // ----------------------------------------------------------------------------
-// api building for order table.
-// express().get('/api/getOrders', (req, res) => {
-//     db.query('SELECT O.DID,O.OID, O.UID, O.STATUS, O.TID, I.ITEMID FROM orders O JOIN ORDER_ITEM I  ON  O.OID = I.OID ', (err, results) => {
-//         if (err) throw err;
-//         res.json(results);
-//     });
-// });
 const isAdmin = (req) => {
   // Assuming you have a role property in your user object, and 'admin' represents an admin user
   return req.user && req.user.role === "admin";
@@ -775,26 +768,6 @@ express().get("/orders", async (req, res) => {
 });
 
 // --------------------------------------------------------
-
-// ------------------------------
-  express().get("/orderDetails", async(req,res)=>{
-	const sid = await getUID(req, res);
-    const role = await getRole(req, res);
-	let query ="SELECT O.OID, O.DATE, O.STATUS, O.TID, O.TOTAL, O.ADDRESS, O.SHIPPING, I.ITMEID, U.NAME, A.CITY, A.STATE FROM orders O INNER JOIN order_item I ON O.OID=I.OID INNER JOIN users U ON O.UID=U.UID INNER JOIN address A O.UID=A.UID";
-	if (role != 4) {
-		query += ` WHERE O.UID = ${sid}`;
-	  }
-	
-	  // Use parameterized queries to prevent SQL injection
-	  db.query(query, (err, results) => {
-		if (err) {
-		  // Handle errors and throw a 400 error
-		  return res.status(400).json({ error: "Error retrieving orders" });
-		}
-		res.json(results);
-	  });
-	});
-// ---------------------------------
 /**
  * Retrieves the user ID (UID) from the decoded JWT token stored in the admin cookie.
  *

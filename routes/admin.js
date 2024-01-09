@@ -50,9 +50,11 @@ router.get('/orders', adminController.isLoggedIn, (req, res) => {
 
 router.get('/order', adminController.order);
 
-router.get('/orderDetails', adminController.isLoggedIn, (req, res) => {
+router.get('/orderDet', adminController.isLoggedIn, (req, res) => {
 	res.sendFile(path.join(staticPath, "./adminOrderDetails.html"));
 });
+
+router.get('/orderDet', adminController.orderDet);
 
 router.get('/signout', adminController.signout);
 
