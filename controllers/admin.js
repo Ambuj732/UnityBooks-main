@@ -740,11 +740,6 @@ exports.orderDet = async (req, res) => {
 };
 
 // ----------------------------------------------------------------------------
-const isAdmin = (req) => {
-  // Assuming you have a role property in your user object, and 'admin' represents an admin user
-  return req.user && req.user.role === "admin";
-};
-
 express().get("/orders", async (req, res) => {
   const sid = await getUID(req, res);
   const role = await getRole(req, res);
