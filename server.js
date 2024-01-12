@@ -398,6 +398,57 @@ app.post("/api/addCoupon", async (req, res) => {
     }
 })
 
+
+ 
+// --------------------------------
+// Route to check if a user is a seller or an admin
+app.get('/registerSeller', async(req, res) => {
+    const SID =await getUID(req, res);
+    db.query('SELECT * FROM SELLER WHERE SID = ?', [SID], (err, results) => {
+      if (err) {
+        console.error('Error executing MySQL query:', err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        if (results.length > 0) {
+          // User is a seller
+          res.redirect('/seller.html');
+        } else {
+          // User is not a seller, redirect to admin page
+          res.redirect('/admin');
+        }
+      }
+    });
+  });
+//   ------------------------------
+// Endpoint to register a user as a seller
+app.post('/api/registerSeller', async(req, res) => {
+    const UID =await getUID(req, res);
+    // Check if the user already exists in the database (you might want to enhance this check)
+    db.query('SELECT * FROM USERS WHERE UID = ?', [UID], (err, results) => {
+      if (err) {
+        console.error('Error executing MySQL query:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+      } else {
+        if (results.length > 0) {
+          // User exists, proceed to register as a seller
+          db.query('INSERT INTO SELLER (SID) VALUES (?)', [UID], (err) => {
+            if (err) {
+              console.error('Error executing MySQL query:', err);
+              res.status(500).json({ error: 'Internal Server Error' });
+            } else {
+              res.json({ message: 'Seller registered successfully' });
+            } 
+          });
+        } else {
+          // User does not exist
+          res.status(404).json({ error: 'User not found. Cannot register as a seller.' });
+        }
+      }
+    });
+  });
+// ---------------------------------
+
+
 app.get("/api/getCart", async (req, res) => {
     if (req.cookies.UnityLog) {
         let uid = await getUID(req, res);
