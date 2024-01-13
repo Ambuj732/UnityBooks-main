@@ -396,15 +396,15 @@ app.post("/api/addCoupon", async (req, res) => {
             error: error
         });
     }
-})
+});
 
 
  
 // --------------------------------
-// Route to check if a user is a seller or an admin
+// Route to check if a user is a seller or an admin.
 app.get('/registerSeller', async(req, res) => {
-    const SID =await getUID(req, res);
-    db.query('SELECT * FROM SELLER WHERE SID = ?', [SID], (err, results) => {
+    const UID =await getUID(req, res);
+    db.query('SELECT * FROM SELLER WHERE SID = ?', [UID], (err, results) => {
       if (err) {
         console.error('Error executing MySQL query:', err);
         res.status(500).send('Internal Server Error');
@@ -413,39 +413,66 @@ app.get('/registerSeller', async(req, res) => {
           // User is a seller
           res.redirect('/seller.html');
         } else {
-          // User is not a seller, redirect to admin page
-          res.redirect('/admin');
+          // User is not a seller , redirect to admin page
+          res.redirect('/adminLogin.html');
         }
       }
     });
   });
 //   ------------------------------
 // Endpoint to register a user as a seller
-app.post('/api/registerSeller', async(req, res) => {
-    const UID =await getUID(req, res);
-    // Check if the user already exists in the database (you might want to enhance this check)
-    db.query('SELECT * FROM USERS WHERE UID = ?', [UID], (err, results) => {
-      if (err) {
-        console.error('Error executing MySQL query:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
-      } else {
-        if (results.length > 0) {
-          // User exists, proceed to register as a seller
-          db.query('INSERT INTO SELLER (SID) VALUES (?)', [UID], (err) => {
-            if (err) {
-              console.error('Error executing MySQL query:', err);
+app.post('/api/registerSeller', async (req, res) => {
+    try {
+      const UID = await getUID(req, res);
+      // Check if the user already exists in the database
+      db.query('SELECT * FROM Users WHERE UID = ?', [UID], (userErr, userResults) => {
+        if (userErr) {
+          console.error('Error executing MySQL query for Users:', userErr);
+          res.status(500).json({ error: 'Internal Server Error' });
+          return;
+        }
+  
+        if (userResults.length > 0) {
+          // User exists, proceed to get NAME
+          const NAME = userResults[0].NAME;
+          // Now, get AID from the Address table with DADD=1
+          db.query('SELECT AID FROM Address WHERE DADD = ?', [1], (addressErr, addressResults) => {
+            if (addressErr) {
+              console.error('Error executing MySQL query for Address:', addressErr);
               res.status(500).json({ error: 'Internal Server Error' });
+              return;
+            }
+  
+            if (addressResults.length > 0) {
+              // Address with DADD=1 exists, proceed to get AID
+              const AID = addressResults[0].AID; 
+              // Now, insert the values into the Seller table
+              db.query('INSERT INTO Seller (SID, NAME, AID) VALUES (?, ?, ?)', [UID, NAME, AID], (insertErr) => {
+                if (insertErr) {
+                  console.error('Error executing MySQL query for Seller registration:', insertErr);
+                  res.status(500).json({ error: 'Internal Server Error' });
+                  return;
+                }
+                // Successfully registered as a seller
+                res.json({ message: 'Seller registered successfully' });
+              });
             } else {
-              res.json({ message: 'Seller registered successfully' });
-            } 
+              // No Address with DADD=1 found
+              res.status(404).json({ error: 'Address not found with DADD=1' });
+            }
           });
         } else {
           // User does not exist
           res.status(404).json({ error: 'User not found. Cannot register as a seller.' });
         }
-      }
-    });
+      });
+    } catch (error) {
+      console.error('Error in registerSeller:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
   });
+  
+  
 // ---------------------------------
 
 
