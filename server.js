@@ -425,7 +425,7 @@ app.post('/api/registerSeller', async (req, res) => {
     try {
       const UID = await getUID(req, res);
       // Check if the user already exists in the database
-      db.query('SELECT * FROM Users WHERE UID = ?', [UID], (userErr, userResults) => {
+      db.query('SELECT * FROM USERS WHERE UID = ?', [UID], (userErr, userResults) => {
         if (userErr) {
           console.error('Error executing MySQL query for Users:', userErr);
           res.status(500).json({ error: 'Internal Server Error' });
@@ -436,7 +436,7 @@ app.post('/api/registerSeller', async (req, res) => {
           // User exists, proceed to get NAME
           const NAME = userResults[0].NAME;
           // Now, get AID from the Address table with DADD=1
-          db.query('SELECT AID FROM Address WHERE DADD = ?', [1], (addressErr, addressResults) => {
+          db.query('SELECT AID FROM ADDRESS WHERE DADD = ?', [1], (addressErr, addressResults) => {
             if (addressErr) {
               console.error('Error executing MySQL query for Address:', addressErr);
               res.status(500).json({ error: 'Internal Server Error' });
@@ -447,18 +447,18 @@ app.post('/api/registerSeller', async (req, res) => {
               // Address with DADD=1 exists, proceed to get AID
               const AID = addressResults[0].AID; 
               // Now, insert the values into the Seller table
-              db.query('INSERT INTO Seller (SID, NAME, AID) VALUES (?, ?, ?)', [UID, NAME, AID], (insertErr) => {
+              db.query('INSERT INTO SELLER (SID, SELLER_NAME NAME, ADDRESS) VALUES (?, ?, ?)', [UID, NAME, AID], (insertErr) => {
                 if (insertErr) {
                   console.error('Error executing MySQL query for Seller registration:', insertErr);
                   res.status(500).json({ error: 'Internal Server Error' });
                   return;
                 }
                 // Successfully registered as a seller
-                res.json({ message: 'Seller registered successfully' });
+                res.json({success: true});
               });
             } else {
               // No Address with DADD=1 found
-              res.status(404).json({ error: 'Address not found with DADD=1' });
+              res.status(404).json({ error:  'Address not Found'});
             }
           });
         } else {
@@ -471,8 +471,6 @@ app.post('/api/registerSeller', async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-  
-  
 // ---------------------------------
 
 
