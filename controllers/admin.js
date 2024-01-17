@@ -406,7 +406,7 @@ exports.editProduct = async (req, res) => {
     cp,
     sp,
     discount,
-    quantity,
+    quantity,   
     pages,
     weight,
     description,
