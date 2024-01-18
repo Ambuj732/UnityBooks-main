@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
+const { rejects } = require("assert");
 
 express().use(
   bodyParser.urlencoded({
@@ -379,6 +380,66 @@ exports.product = async (req, res) => {
     errorMsg(res, error, "Internal Server Error", 500, sid);
   }
 };
+
+// ------------------------------------
+// Search - Inventory page 
+express().get("/products/search", async (req, res) => {
+  const searchQuery = req.query.q;
+  if (!searchQuery) {
+    return res.status(400).json({
+      success: false,
+      error: "Search query is missing",
+    });
+  }
+  try {
+    const searchResults = await new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM INVENTORY I JOIN BOOKS B ON I.BID = B.BID WHERE B.NAME LIKE ? OR B.AUTHOR LIKE ?;",
+        [`%${searchQuery}%`, `%${searchQuery}%`],
+        (error, results) => {
+          if (error) reject(error);
+          else resolve(results);
+        }
+      );
+    });
+
+    if (searchResults.length > 0) {
+      return res.status(200).json({
+        success: true,
+        results: searchResults,
+      });
+    } else {
+      return res.status(404).json({
+        success: true,
+        message: "No products found matching the search query",
+      });
+    }
+  } catch (error) {
+    return errorMsg(res, error, "Internal Server Error", 500, null);
+  }
+});
+
+//  Filter - Inventory page
+   express.get("/products/search",async(res,req)=>{
+      const searchQuery= req.body.q
+      const category= req.body.category
+      if(!searchQuery){
+        return res.status(400).json({
+          success:false,
+          message: "Query is missing"
+        });
+      }
+      try{
+          const searchResults = await new promise((resolve, rejects)=>{
+          db.query("SELECT * FROM CATEGORY C JOIN BOOK ON ")
+          })
+      }catch{
+
+      }
+       
+   });
+
+// ------------------------------------
 
 /**
  * Updates the product details in the inventory and books tables.
