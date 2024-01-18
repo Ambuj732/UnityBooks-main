@@ -1,0 +1,35 @@
+    // Perform a search in the database
+ 
+ // Check if the search query is provided
+ 
+// Get the search query from the request parameters
+ 
+// Add this route to your Express application
+ 
+console.log("error");
+ 
+ scss
+  Copy code
+ 
+check-user/:userid
+ 
+// --------------------------------
+ 
+app.get('/api/sellers/:userid', async(req, res) => {
+    const UID =await getUID(req, res);
+  
+    // Fetch data from the sellers table for a specific userid
+    db.query('SELECT * FROM sellers WHERE userid = ?', [UID], (err, results) => {
+      if (err) {
+        console.error('Error executing MySQL query:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+      } else {
+        if (results.length > 0) {
+          res.json(results[0]); // Assuming userid is unique, so returning the first result
+        } else {
+          res.status(404).json({ error: 'Seller not found' });
+        }
+      }
+    });
+  });
+ 

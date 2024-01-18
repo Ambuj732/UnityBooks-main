@@ -399,7 +399,7 @@ express().get("/products/search", async (req, res) => {
         (error, results) => {
           if (error) reject(error);
           else resolve(results);
-        }
+        }   
       );
     });
 
